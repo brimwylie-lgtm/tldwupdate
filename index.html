@@ -1089,54 +1089,8 @@
       </div>
 
       <div class="contact-right reveal reveal-delay-1">
-        <!--
-          TALLY FORM INTEGRATION:
-          Replace this block with your Tally embed code.
-          Example: <iframe data-tally-src="https://tally.so/embed/YOUR_FORM_ID" ...></iframe>
-          
-          For now, showing a styled placeholder form:
-        -->
         <div class="tally-embed-wrap">
-          <!-- Option A: Paste your Tally embed iframe here -->
-          <!-- Option B: Use the form below as a placeholder -->
-          <form class="contact-form" onsubmit="return false;">
-            <div class="form-row">
-              <div class="form-field">
-                <label>Your Name</label>
-                <input type="text" placeholder="Jane Smith" />
-              </div>
-              <div class="form-field">
-                <label>Company</label>
-                <input type="text" placeholder="Acme Corp" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label>Email</label>
-              <input type="email" placeholder="jane@acmecorp.com" />
-            </div>
-            <div class="form-field">
-              <label>Package of Interest</label>
-              <select>
-                <option value="">Select a package…</option>
-                <option>Free Sample First</option>
-                <option>Insight Pack — $695</option>
-                <option>Content Amplifier — $1,875</option>
-                <option>Authority Vault — $2,995</option>
-                <option>Monthly Retainer — Let's talk</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label>Your Content Link + Any Context</label>
-              <textarea rows="4" placeholder="Paste your YouTube, podcast, or recording link here. Tell us a bit about your audience and goals."></textarea>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="consent" />
-              <label for="consent">I agree that the above information will be used to contact me regarding TL;DW Studios services.</label>
-            </div>
-            <div class="form-submit">
-              <button class="btn-submit" type="submit">Submit →</button>
-            </div>
-          </form>
+          <iframe data-tally-src="https://tally.so/embed/Gx01Lz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="764" frameborder="0" marginheight="0" marginwidth="0" title="TL;DW contact form"></iframe>
         </div>
       </div>
     </div>
@@ -1249,4 +1203,12 @@
         statsObserver.unobserve(e.target);
       }
     });
-  }, { thresho
+  }, { threshold: 0.4 });
+  const statStack = document.querySelector('.hero-stat-stack');
+  if (statStack) statsObserver.observe(statStack);
+</script>
+
+<!-- Tally embed loader -->
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+</body>
+</html>
