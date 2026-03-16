@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#0d0d0d"/>
+  <!-- Gold diamond / play mark -->
+  <polygon points="16,5 27,16 16,27 5,16" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- Inner arrow suggesting "forward / transform" -->
+  <polygon points="13,11 22,16 13,21" fill="#c9a84c"/>
+</svg>

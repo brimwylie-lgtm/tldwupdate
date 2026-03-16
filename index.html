@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TL;DW Studios — Turn Your Content Into Authority</title>
+<meta name="description" content="TL;DW Studios transforms your webinars, podcasts, and presentations into polished eBooks, LinkedIn posts, and lead magnets. Turn one recording into months of authority-building content." />
+<meta name="keywords" content="content repurposing, webinar to ebook, LinkedIn content, lead magnets, thought leadership, B2B content marketing" />
+<meta name="author" content="TL;DW Studios" />
+
+<!-- Open Graph (LinkedIn, Facebook) -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tldwstudios.com/" />
+<meta property="og:title" content="TL;DW Studios — You said it once. We make it work 10×." />
+<meta property="og:description" content="Transform your webinars, podcasts, and presentations into polished eBooks, LinkedIn content libraries, and lead magnets. Zero prep. 7-day turnaround." />
+<meta property="og:image" content="https://tldwstudios.com/assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="TL;DW Studios" />
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TL;DW Studios — You said it once. We make it work 10×." />
+<meta name="twitter:description" content="Transform your webinars, podcasts, and presentations into polished eBooks, LinkedIn content, and lead magnets." />
+<meta name="twitter:image" content="https://tldwstudios.com/assets/og-image.jpg" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate icon" href="/favicon.ico" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* ─── Variables ─── */
+  :root {
+    --ink: #0d0d0d;
+    --ink-soft: #1a1a1a;
+    --paper: #f5f2ec;
+    --paper-warm: #ede9e0;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: rgba(201,168,76,0.15);
+    --mist: #8a8580;
+    --rule: rgba(201,168,76,0.25);
+    --white: #ffffff;
+    --radius: 2px;
+    --transition: 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  /* ─── Reset ─── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.65;
+    overflow-x: hidden;
+    cursor: none;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── Custom Cursor ─── */
+  .cursor {
+    position: fixed; top: 0; left: 0; z-index: 9999;
+    pointer-events: none;
+  }
+  .cursor-dot {
+    width: 6px; height: 6px; background: var(--gold);
+    border-radius: 50%; position: absolute;
+    transform: translate(-50%,-50%);
+    transition: transform 0.1s;
+  }
+  .cursor-ring {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(201,168,76,0.5);
+    border-radius: 50%; position: absolute;
+    transform: translate(-50%,-50%);
+    transition: transform 0.18s cubic-bezier(0.22,1,0.36,1), width 0.3s, height 0.3s, border-color 0.3s;
+  }
+  body:hover .cursor-ring { opacity: 1; }
+
+  /* ─── Typography ─── */
+  .serif { font-family: 'Instrument Serif', Georgia, serif; }
+  .mono  { font-family: 'Space Mono', monospace; }
+
+  h1,h2,h3 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; line-height: 1.15; }
+
+  /* ─── Utility ─── */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 24px;
+  }
+  .section-label::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--gold); }
+
+  .gold-rule { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
+
+  /* ─── Noise overlay ─── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.025;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 20px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid transparent;
+    transition: background 0.4s, border-color 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(13,13,13,0.92);
+    backdrop-filter: blur(12px);
+    border-color: var(--rule);
+  }
+  .nav-logo img {
+    height: 36px;
+    filter: brightness(0) invert(1);
+  }
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links a {
+    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--mist); transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--paper); }
+  .nav-cta {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1px solid var(--gold); color: var(--gold) !important;
+    padding: 8px 20px;
+    transition: background var(--transition), color var(--transition) !important;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--ink) !important; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative; overflow: hidden;
+    padding-top: 80px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 90% at 60% 50%, black 0%, transparent 70%);
+  }
+  .hero-left {
+    position: relative; z-index: 2;
+    padding: 80px 40px 80px 40px;
+  }
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow span { display: inline-block; width: 32px; height: 1px; background: var(--gold); }
+  .hero-h1 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.08;
+    margin-bottom: 10px;
+  }
+  .hero-h1 em { font-style: italic; color: var(--gold); }
+  .hero-arrow {
+    font-size: clamp(3rem, 5.5vw, 5rem);
+    color: var(--gold); line-height: 1; display: block;
+    margin: 8px 0;
+  }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--mist);
+    max-width: 440px;
+    margin-top: 28px; margin-bottom: 44px;
+    line-height: 1.7;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: var(--ink);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 14px 28px; border: none; cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+  }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(201,168,76,0.3); color: var(--paper);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 14px 28px; background: transparent; cursor: pointer;
+    transition: border-color var(--transition), color var(--transition);
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-right {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-end;
+    padding: 80px 40px 80px 0;
+  }
+  .hero-stat-stack { display: flex; flex-direction: column; gap: 2px; width: 100%; max-width: 380px; }
+  .hero-stat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: border-color var(--transition), background var(--transition);
+    cursor: default;
+  }
+  .hero-stat:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.05);
+  }
+  .stat-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2.2rem; color: var(--gold);
+  }
+  .stat-label { font-size: 0.8rem; color: var(--mist); max-width: 180px; text-align: right; line-height: 1.4; }
+  .hero-note {
+    margin-top: 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    color: rgba(138,133,128,0.5);
+    text-align: right; width: 100%; max-width: 380px;
+  }
+
+  /* ─── MARQUEE ─── */
+  .marquee-wrap {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0; overflow: hidden;
+    background: rgba(201,168,76,0.04);
+  }
+  .marquee-track {
+    display: flex; gap: 0;
+    animation: marquee 32s linear infinite;
+    width: max-content;
+  }
+  .marquee-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--mist); white-space: nowrap;
+    padding: 0 48px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .marquee-item::after { content: '◆'; color: var(--gold); font-size: 0.5rem; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ─── PROBLEM SECTION ─── */
+  #problem {
+    padding: 120px 0;
+    position: relative;
+  }
+  .problem-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .problem-left h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-bottom: 28px;
+  }
+  .problem-left h2 em { font-style: italic; color: var(--gold); }
+  .problem-left p { color: var(--mist); font-size: 1rem; line-height: 1.75; margin-bottom: 20px; }
+  .problem-right { display: flex; flex-direction: column; gap: 2px; }
+  .problem-stat-row {
+    display: flex; align-items: stretch;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .problem-stat-row + .problem-stat-row { border-top: none; }
+  .psr-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2.5rem; color: var(--ink);
+    background: var(--gold);
+    padding: 20px 24px;
+    display: flex; align-items: center; justify-content: center;
+    min-width: 100px;
+  }
+  .psr-text {
+    padding: 20px 24px;
+    display: flex; align-items: center;
+    font-size: 0.88rem; color: var(--mist); line-height: 1.5;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  #how {
+    padding: 120px 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.03) 50%, transparent 100%);
+  }
+  .how-header { text-align: center; margin-bottom: 72px; }
+  .how-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; }
+  .how-header h2 em { font-style: italic; color: var(--gold); }
+  .how-header p { color: var(--mist); max-width: 480px; margin: 0 auto; }
+  .steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute; top: 48px; left: calc(12.5% + 24px); right: calc(12.5% + 24px);
+    height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    pointer-events: none;
+  }
+  .step {
+    padding: 0 20px; text-align: center;
+    position: relative;
+  }
+  .step-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--gold);
+    margin: 0 auto 24px;
+    background: var(--ink);
+    position: relative; z-index: 1;
+    transition: background var(--transition);
+  }
+  .step:hover .step-num { background: var(--gold); color: var(--ink); }
+  .step h3 { font-size: 1.05rem; margin-bottom: 12px; }
+  .step p { font-size: 0.85rem; color: var(--mist); line-height: 1.65; }
+
+  /* ─── SERVICES / PACKAGES ─── */
+  #services {
+    padding: 120px 0;
+  }
+  .services-header { margin-bottom: 64px; }
+  .services-header h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 16px; }
+  .services-header h2 em { font-style: italic; color: var(--gold); }
+  .services-header p { color: var(--mist); max-width: 540px; }
+  .packages {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+  .package {
+    border: 1px solid var(--rule);
+    padding: 40px 36px;
+    position: relative; overflow: hidden;
+    transition: border-color var(--transition);
+    display: flex; flex-direction: column;
+  }
+  .package:hover { border-color: var(--gold); }
+  .package.featured {
+    background: rgba(201,168,76,0.06);
+    border-color: var(--gold);
+  }
+  .pkg-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink); background: var(--gold);
+    padding: 4px 10px; display: inline-block;
+    margin-bottom: 24px; align-self: flex-start;
+  }
+  .pkg-name {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.5rem; margin-bottom: 6px;
+  }
+  .pkg-tagline { font-size: 0.82rem; color: var(--mist); margin-bottom: 28px; font-style: italic; }
+  .pkg-price {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2.8rem; color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .pkg-price-note {
+    font-size: 0.72rem; color: var(--mist); margin-bottom: 32px;
+    font-family: 'Space Mono', monospace; letter-spacing: 0.08em;
+  }
+  .pkg-divider { height: 1px; background: var(--rule); margin-bottom: 28px; }
+  .pkg-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .pkg-features li {
+    font-size: 0.85rem; color: var(--mist);
+    display: flex; gap: 12px; line-height: 1.5;
+  }
+  .pkg-features li::before {
+    content: '⦿'; color: var(--gold); font-size: 0.7rem;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .pkg-cta {
+    margin-top: 36px;
+    display: block; text-align: center;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 13px 0;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+  }
+  .pkg-cta:hover, .package.featured .pkg-cta {
+    background: var(--gold); color: var(--ink); border-color: var(--gold);
+  }
+
+  /* Add-ons strip */
+  .addons-strip {
+    margin-top: 2px;
+    border: 1px solid var(--rule);
+    padding: 28px 36px;
+    display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
+  }
+  .addons-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); white-space: nowrap;
+  }
+  .addon-pill {
+    font-size: 0.78rem; color: var(--mist);
+    border: 1px solid var(--rule); padding: 6px 14px;
+    border-radius: 2px;
+    transition: border-color var(--transition), color var(--transition);
+  }
+  .addon-pill:hover { border-color: var(--gold); color: var(--paper); }
+  .addon-pill strong { color: var(--paper); font-weight: 400; }
+
+  /* ─── PROOF / CASE STUDY ─── */
+  #proof {
+    padding: 120px 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .proof-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .proof-left .section-label { margin-bottom: 24px; }
+  .proof-left blockquote {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-style: italic; line-height: 1.4;
+    color: var(--paper); margin-bottom: 28px;
+    border-left: 2px solid var(--gold); padding-left: 24px;
+  }
+  .proof-left cite { font-style: normal; font-size: 0.8rem; color: var(--mist); }
+  .proof-right { display: flex; flex-direction: column; gap: 2px; }
+  .result-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--rule);
+    padding: 28px 32px;
+    display: flex; align-items: center; gap: 24px;
+    transition: border-color var(--transition), background var(--transition);
+  }
+  .result-card:hover { border-color: var(--gold); background: rgba(201,168,76,0.04); }
+  .result-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 2.6rem; color: var(--gold);
+    min-width: 120px;
+  }
+  .result-desc { font-size: 0.85rem; color: var(--mist); line-height: 1.55; }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { padding: 120px 0; }
+  .testimonials-header { text-align: center; margin-bottom: 64px; }
+  .testimonials-header h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+  .testimonials-header h2 em { font-style: italic; color: var(--gold); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .testi-card {
+    border: 1px solid var(--rule);
+    padding: 36px 32px;
+    position: relative;
+    transition: border-color var(--transition);
+  }
+  .testi-card:hover { border-color: var(--gold); }
+  .testi-card::before {
+    content: '\201C';
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 6rem; line-height: 1;
+    color: rgba(201,168,76,0.15);
+    position: absolute; top: 16px; left: 20px;
+    pointer-events: none;
+  }
+  .testi-text { font-size: 0.9rem; color: var(--mist); line-height: 1.7; margin-bottom: 24px; position: relative; z-index: 1; font-style: italic; }
+  .testi-author { font-size: 0.78rem; color: var(--paper); }
+  .testi-role { font-size: 0.72rem; color: var(--mist); margin-top: 4px; }
+
+  /* ─── WHO IT'S FOR ─── */
+  #for { padding: 120px 0; }
+  .for-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .for-left h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 28px; }
+  .for-left h2 em { font-style: italic; color: var(--gold); }
+  .for-left p { color: var(--mist); line-height: 1.75; margin-bottom: 20px; }
+  .audience-list { display: flex; flex-direction: column; gap: 2px; }
+  .aud-item {
+    border: 1px solid var(--rule);
+    padding: 18px 24px;
+    display: flex; align-items: center; gap: 16px;
+    font-size: 0.9rem; color: var(--mist);
+    transition: border-color var(--transition), color var(--transition), background var(--transition);
+    cursor: default;
+  }
+  .aud-item:hover { border-color: var(--gold); color: var(--paper); background: rgba(201,168,76,0.04); }
+  .aud-icon { font-size: 1.2rem; width: 28px; text-align: center; }
+
+  /* ─── SAMPLE CTA ─── */
+  #sample {
+    padding: 100px 0;
+    background: rgba(201,168,76,0.04);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  #sample h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); margin-bottom: 16px; }
+  #sample h2 em { font-style: italic; color: var(--gold); }
+  #sample p { color: var(--mist); max-width: 500px; margin: 0 auto 40px; }
+  .sample-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ─── FAQs ─── */
+  #faqs { padding: 120px 0; }
+  .faqs-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+  .faqs-left h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+  .faqs-left h2 em { font-style: italic; color: var(--gold); }
+  .faq-list { display: flex; flex-direction: column; gap: 2px; }
+  details {
+    border: 1px solid var(--rule);
+    transition: border-color var(--transition);
+  }
+  details[open] { border-color: var(--gold); }
+  summary {
+    padding: 22px 24px;
+    font-size: 0.9rem; color: var(--paper);
+    cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+'; color: var(--gold);
+    font-family: 'Space Mono', monospace; font-size: 1.1rem;
+    flex-shrink: 0; transition: transform var(--transition);
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  .faq-body { padding: 0 24px 22px; font-size: 0.85rem; color: var(--mist); line-height: 1.7; }
+
+  /* ─── FOOTER / CONTACT ─── */
+  #contact {
+    padding: 100px 0 60px;
+    border-top: 1px solid var(--rule);
+  }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+  .contact-left h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 16px; }
+  .contact-left h2 em { font-style: italic; color: var(--gold); }
+  .contact-left p { color: var(--mist); line-height: 1.75; margin-bottom: 28px; }
+  .contact-meta { display: flex; flex-direction: column; gap: 12px; }
+  .contact-meta-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.82rem; color: var(--mist);
+  }
+  .contact-meta-item span { color: var(--gold); font-size: 0.7rem; }
+  .contact-right {
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .tally-embed-wrap {
+    border: 1px solid var(--rule);
+    padding: 40px;
+  }
+  .tally-placeholder {
+    text-align: center; padding: 60px 20px;
+    border: 1px dashed rgba(201,168,76,0.3);
+  }
+  .tally-placeholder p { color: var(--mist); font-size: 0.85rem; margin-bottom: 12px; }
+  .tally-placeholder code {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem; color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    padding: 4px 10px;
+  }
+
+  /* Form styles for the inline form */
+  .contact-form { display: flex; flex-direction: column; gap: 2px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .form-field {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .form-field label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--mist);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-top: none;
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color var(--transition);
+    resize: none;
+    width: 100%;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus { border-color: var(--gold); }
+  .form-field input::placeholder,
+  .form-field textarea::placeholder { color: rgba(138,133,128,0.4); }
+  .form-field select option { background: var(--ink-soft); }
+  .form-check {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 16px 0;
+    font-size: 0.78rem; color: var(--mist);
+  }
+  .form-check input[type=checkbox] { margin-top: 2px; accent-color: var(--gold); }
+  .form-submit { display: flex; justify-content: flex-end; padding-top: 8px; }
+  .btn-submit {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold); color: var(--ink);
+    border: none; cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 14px 32px;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+  }
+
+  /* Footer */
+  .footer-bar {
+    border-top: 1px solid var(--rule);
+    padding-top: 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-logo img { height: 28px; filter: brightness(0) invert(1) opacity(0.4); }
+  .footer-links { display: flex; gap: 32px; }
+  .footer-links a {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--mist); transition: color var(--transition);
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy {
+    font-size: 0.7rem; color: rgba(138,133,128,0.4);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ─── Scroll Reveal ─── */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; padding-top: 100px; }
+    .hero-left { padding: 60px 24px 40px; }
+    .hero-right { padding: 0 24px 60px; align-items: flex-start; }
+    .hero-stat-stack { max-width: 100%; }
+    .hero-note { text-align: left; max-width: 100%; }
+    .problem-inner, .proof-inner, .for-inner,
+    .faqs-inner, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .steps::before { display: none; }
+    .packages { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 24px; }
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    body { cursor: auto; }
+    .cursor { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor">
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <!-- Replace src with your actual logo path -->
+    <img src="https://tldwstudios.com/assets/images/image01.jpg" alt="TL;DW Studios"
+         onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Instrument Serif,serif;font-size:1.1rem;color:#f5f2ec;letter-spacing:0.05em;\'>TL;DW Studios</span>'" />
+  </a>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#services">Pricing</a>
+    <a href="#proof">Case Study</a>
+    <a href="#faqs">FAQs</a>
+    <a href="#contact" class="nav-cta">Get Sample</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span></span> Content Repurposing Studio</div>
+    <h1 class="hero-h1 serif">
+      You said it once.<br/>
+      <em>We make it work</em><br/>
+      <span class="hero-arrow">10×</span>
+    </h1>
+    <p class="hero-sub">
+      TL;DW Studios transforms your webinars, podcasts, and presentations 
+      into polished eBooks, LinkedIn content libraries, and lead magnets — 
+      so your best ideas keep working long after the event ends.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Request a Free Sample →</a>
+      <a href="#services" class="btn-ghost">See Pricing</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stat-stack">
+      <div class="hero-stat reveal reveal-delay-1">
+        <span class="stat-num">312</span>
+        <span class="stat-label">eBook downloads in the first month</span>
+      </div>
+      <div class="hero-stat reveal reveal-delay-2">
+        <span class="stat-num">45%</span>
+        <span class="stat-label">increase in sign-ups for the next webinar</span>
+      </div>
+      <div class="hero-stat reveal reveal-delay-3">
+        <span class="stat-num">1,400+</span>
+        <span class="stat-label">LinkedIn impressions from one 67-min webinar</span>
+      </div>
+      <div class="hero-stat reveal reveal-delay-4">
+        <span class="stat-num">7</span>
+        <span class="stat-label">business-day turnaround, zero prep from you</span>
+      </div>
+    </div>
+    <p class="hero-note">// Real results from real clients</p>
+  </div>
+</section>
+
+<!-- ─── MARQUEE ─── -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <!-- Duplicated for seamless loop -->
+    <span class="marquee-item">Webinars → eBooks</span>
+    <span class="marquee-item">Podcasts → LinkedIn Posts</span>
+    <span class="marquee-item">Presentations → Lead Magnets</span>
+    <span class="marquee-item">Interviews → Carousels</span>
+    <span class="marquee-item">Recordings → Authority</span>
+    <span class="marquee-item">One Session → 90 Days of Content</span>
+    <span class="marquee-item">Webinars → eBooks</span>
+    <span class="marquee-item">Podcasts → LinkedIn Posts</span>
+    <span class="marquee-item">Presentations → Lead Magnets</span>
+    <span class="marquee-item">Interviews → Carousels</span>
+    <span class="marquee-item">Recordings → Authority</span>
+    <span class="marquee-item">One Session → 90 Days of Content</span>
+  </div>
+</div>
+
+<!-- ─── PROBLEM ─── -->
+<section id="problem">
+  <div class="container">
+    <div class="problem-inner">
+      <div class="problem-left reveal">
+        <div class="section-label">The Problem</div>
+        <h2 class="serif">Your content is dying<br/><em>on the vine.</em></h2>
+        <p>You spent weeks preparing. You delivered something genuinely valuable. And 48 hours after your webinar ended, almost no one is talking about it.</p>
+        <p>That recording — full of insights, expertise, and hard-won knowledge — is sitting in a Google Drive folder no one opens. This is not a you problem. It is an industry problem. And it is completely fixable.</p>
+        <a href="#how" class="btn-ghost" style="display:inline-flex;margin-top:20px;">See how we fix it →</a>
+      </div>
+      <div class="problem-right reveal reveal-delay-1">
+        <div class="problem-stat-row">
+          <div class="psr-num">74%</div>
+          <div class="psr-text">of webinar replay views happen within 24 hours — then the audience disappears forever.</div>
+        </div>
+        <div class="problem-stat-row">
+          <div class="psr-num">$0</div>
+          <div class="psr-text">in return from the average webinar recording after its first week of life. Thousands spent. One week of value.</div>
+        </div>
+        <div class="problem-stat-row">
+          <div class="psr-num">10×</div>
+          <div class="psr-text">more value unlocked when long-form content is repurposed into targeted, channel-optimized assets.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how">
+  <div class="container">
+    <div class="how-header reveal">
+      <div class="section-label" style="justify-content:center;">The Process</div>
+      <h2 class="serif">No calls. No prep. No <em>complexity.</em></h2>
+      <p>We handle everything from transcription to design. Your only job is sending us the link.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <h3 class="serif">Share Your Content</h3>
+        <p>Send us a link — YouTube, Zoom, podcast, conference recording. That's all we need. No slides, scripts, or prep work.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <h3 class="serif">We Extract the Insights</h3>
+        <p>Using a proprietary editorial process, we transcribe, summarize, and surface your strongest ideas, quotes, and frameworks.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <h3 class="serif">We Build Your Package</h3>
+        <p>Those insights become a suite of branded assets: eBooks, LinkedIn posts, carousels, blog summaries — all aligned to your objectives.</p>
+      </div>
+      <div class="step reveal reveal-delay-4">
+        <div class="step-num">04</div>
+        <h3 class="serif">You Publish & Grow</h3>
+        <p>Receive a ready-to-share content library that extends your reach, builds authority, and generates leads — for months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES / PACKAGES ─── -->
+<section id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-label">Pricing</div>
+      <h2 class="serif">Choose your <em>content track.</em></h2>
+      <p>Three packages designed for different volumes and ambitions. All include zero-prep process and fast turnaround. Prices in CAD.</p>
+    </div>
+    <div class="packages">
+      <!-- Starter -->
+      <div class="package reveal">
+        <span class="pkg-badge">Starter</span>
+        <div class="pkg-name serif">Insight Pack</div>
+        <div class="pkg-tagline">One recording. A month of content.</div>
+        <div class="pkg-price">$695</div>
+        <div class="pkg-price-note">per session · 7 biz-day turnaround</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Full insight extraction & editorial review</li>
+          <li>8–12 page branded eBook (intro, insights, CTA)</li>
+          <li>3 suggested LinkedIn post ideas + lead magnet angles</li>
+          <li>Tone and branding matched to your site</li>
+          <li>Delivered in PDF format</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Get Started</a>
+      </div>
+
+      <!-- Pro (featured) -->
+      <div class="package featured reveal reveal-delay-1">
+        <span class="pkg-badge">Most Popular</span>
+        <div class="pkg-name serif">Content Amplifier</div>
+        <div class="pkg-tagline">Three sessions. One unified strategy.</div>
+        <div class="pkg-price">$1,875</div>
+        <div class="pkg-price-note">3 sessions · Save $500 · 10–12 biz days</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Everything in Insight Pack, times three</li>
+          <li>3 matching eBooks with aligned structure and design</li>
+          <li>3 short blog summaries (one per recording)</li>
+          <li>10 total LinkedIn post drafts + 3 carousel templates</li>
+          <li>Unified strategy overview for cross-promotion</li>
+          <li>Ideal for speakers, marketers, and agencies</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Get Started</a>
+      </div>
+
+      <!-- Elite -->
+      <div class="package reveal reveal-delay-2">
+        <span class="pkg-badge">Elite</span>
+        <div class="pkg-name serif">Authority Vault</div>
+        <div class="pkg-tagline">Your complete thought-leadership library.</div>
+        <div class="pkg-price">$2,995</div>
+        <div class="pkg-price-note">5 sessions · Save $1,975 · 14–16 biz days</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Everything in Content Amplifier, plus two more sessions</li>
+          <li>5 full eBooks with unified visual theme</li>
+          <li>15 post drafts + 5 carousel templates</li>
+          <li>2 long-form blog articles from strongest insights</li>
+          <li>Content release plan and suggested lead magnets</li>
+          <li>Perfect for forums, associations, and scaling brands</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Add-ons -->
+    <div class="addons-strip reveal">
+      <span class="addons-label">Add-Ons</span>
+      <span class="addon-pill">Landing page with lead capture <strong>+$197</strong></span>
+      <span class="addon-pill">Extra session <strong>+$450</strong></span>
+      <span class="addon-pill">Priority 5-day turnaround <strong>+$200</strong></span>
+      <span class="addon-pill">LinkedIn ghostwriting (8 posts + 1 article/mo) <strong>+$1,000</strong></span>
+      <span class="addon-pill"><a href="#contact" style="color:inherit;">Monthly retainer — <strong>ask us</strong></a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROOF ─── -->
+<section id="proof">
+  <div class="container">
+    <div class="proof-inner">
+      <div class="proof-left reveal">
+        <div class="section-label">Case Study</div>
+        <blockquote class="serif">"We went from one-and-done webinars to always-on lead generation."</blockquote>
+        <cite>— Founder, SEO Consulting Agency</cite>
+        <p style="color:var(--mist);font-size:0.85rem;margin-top:20px;line-height:1.7;">
+          An SEO agency ran informative webinars on keyword strategy and data privacy, but struggled to extend the life of each event. Attendance was strong, but post-event engagement was minimal. TL;DW Studios transformed a 68-minute webinar into a 12-page branded eBook and LinkedIn campaign.
+        </p>
+        <a href="#contact" class="btn-ghost" style="display:inline-flex;margin-top:28px;">Request a Sample Like This →</a>
+      </div>
+      <div class="proof-right reveal reveal-delay-1">
+        <div class="result-card">
+          <div class="result-num serif">312</div>
+          <div class="result-desc">eBook downloads in the <strong style="color:var(--paper);">first month</strong>, driven entirely by LinkedIn and email</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num serif">45%</div>
+          <div class="result-desc"><strong style="color:var(--paper);">increase in sign-ups</strong> for the following webinar — driven by the eBook lead magnet</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num serif">82</div>
+          <div class="result-desc">new <strong style="color:var(--paper);">email opt-ins</strong> added to their marketing list from one repurposed webinar</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num serif">∞</div>
+          <div class="result-desc">The agency now uses TL;DW eBooks as part of <strong style="color:var(--paper);">every event marketing cycle</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div class="section-label" style="justify-content:center;">What Clients Say</div>
+      <h2 class="serif">Real results from <em>real clients.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-text">"Our webinar series had great content but no staying power. TL;DW turned them into professional LinkedIn posts that drive constant engagement for our senior execs."</p>
+        <div class="testi-author">Marketing Director</div>
+        <div class="testi-role">SaaS Company</div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <p class="testi-text">"The team captured our tone of voice perfectly and even worked in our niche terminology. It feels like something we created in-house."</p>
+        <div class="testi-author">Head of Partnerships</div>
+        <div class="testi-role">Non-Profit Organization</div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <p class="testi-text">"The turnaround time was fantastic. Within a week we had a polished, branded e-book ready to launch with our LinkedIn ads."</p>
+        <div class="testi-author">VP of Sales</div>
+        <div class="testi-role">B2B Accounting Services</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO IT'S FOR ─── -->
+<section id="for">
+  <div class="container">
+    <div class="for-inner">
+      <div class="for-left reveal">
+        <div class="section-label">Ideal For</div>
+        <h2 class="serif">Built for <em>modern<br/>thought leaders.</em></h2>
+        <p>If you're creating long-form content and not repurposing it, you're leaving authority — and leads — on the table. TL;DW is designed for people who want the output without the overhead.</p>
+        <p style="color:var(--mist);font-size:0.82rem;margin-top:28px;padding-top:20px;border-top:1px solid var(--rule);">
+          <strong style="color:var(--paper);">Not for you if:</strong> Your team isn't producing long-form content, or you need purely SEO writing services.
+        </p>
+      </div>
+      <div class="for-right reveal reveal-delay-1">
+        <div class="audience-list">
+          <div class="aud-item"><span class="aud-icon">🏢</span> Founder-led B2B companies</div>
+          <div class="aud-item"><span class="aud-icon">🎙️</span> Podcast hosts and show producers</div>
+          <div class="aud-item"><span class="aud-icon">📣</span> Keynote speakers and conference presenters</div>
+          <div class="aud-item"><span class="aud-icon">📊</span> Marketing directors running webinar series</div>
+          <div class="aud-item"><span class="aud-icon">🤝</span> Professional services firms (consulting, accounting, legal)</div>
+          <div class="aud-item"><span class="aud-icon">🏛️</span> Associations and event organizations</div>
+          <div class="aud-item"><span class="aud-icon">👔</span> Executives building personal brand on LinkedIn</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SAMPLE CTA ─── -->
+<section id="sample">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;">See It First</div>
+      <h2 class="serif">Not sure yet? <em>See a live sample.</em></h2>
+      <p>Send us one of your recordings. We'll return three polished LinkedIn post examples — free, no strings, so you can see exactly what we deliver before you commit.</p>
+      <div class="sample-actions">
+        <a href="#contact" class="btn-primary">Request Free Sample →</a>
+        <a href="#services" class="btn-ghost">See Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQs ─── -->
+<section id="faqs">
+  <div class="container">
+    <div class="faqs-inner">
+      <div class="faqs-left reveal">
+        <div class="section-label">FAQs</div>
+        <h2 class="serif">Questions<br/><em>answered.</em></h2>
+      </div>
+      <div class="faq-list reveal reveal-delay-1">
+        <details>
+          <summary>What exactly does TL;DW Studios do?</summary>
+          <div class="faq-body">We turn long-form recordings — webinars, podcasts, presentations, interviews — into polished, branded marketing assets. Using AI-assisted analysis and human editorial review, we extract your key insights and craft them into eBooks, LinkedIn posts, carousels, blog summaries, and more.</div>
+        </details>
+        <details>
+          <summary>What types of content can you work from?</summary>
+          <div class="faq-body">Almost any recorded material: YouTube videos, Zoom webinars, podcast episodes, conference talks, and interviews. If it has spoken insights, we can transform it. A link is all we need — no uploads, no transcripts, no prep work.</div>
+        </details>
+        <details>
+          <summary>What do I actually receive when it's done?</summary>
+          <div class="faq-body">Each project delivers a branded eBook in PDF format, an AI-enhanced transcript summary, and suggested or fully drafted LinkedIn posts. Higher tiers include carousels, blog summaries, and a content strategy overview.</div>
+        </details>
+        <details>
+          <summary>How long does it take?</summary>
+          <div class="faq-body">Starter projects are delivered within 7 business days. Pro (3-session) packages take 10–12 days. Elite (5-session) packages take 14–16 days. Need it faster? Add Priority Turnaround and we'll deliver in 5 business days.</div>
+        </details>
+        <details>
+          <summary>Who is this for?</summary>
+          <div class="faq-body">TL;DW is designed for speakers, podcasters, consultants, marketers, and event organizers who want to extend the life of their content and turn it into a consistent source of leads and authority. If your team isn't currently producing long-form content, this isn't the right fit.</div>
+        </details>
+        <details>
+          <summary>Do you offer ongoing retainers?</summary>
+          <div class="faq-body">Yes. Monthly retainers include LinkedIn ghostwriting (8 posts + 1 article per month) as an add-on to any package, or as a standalone service. For high-volume clients, we offer custom retainer pricing — reach out and we'll build a plan that fits.</div>
+        </details>
+        <details>
+          <summary>How do I get started?</summary>
+          <div class="faq-body">Click "Request Free Sample" and fill out the short form below. Send us a recording link, and we'll return three polished LinkedIn post examples so you can see exactly what we deliver — before committing to a package.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="serif">Let's make your<br/><em>content work harder.</em></h2>
+        <p>Fill out the form and we'll get back to you within one business day. Whether you want a free sample, have a question, or are ready to order — we're ready.</p>
+        <div class="contact-meta">
+          <div class="contact-meta-item"><span>◆</span> Free sample available — zero commitment</div>
+          <div class="contact-meta-item"><span>◆</span> Response within 1 business day</div>
+          <div class="contact-meta-item"><span>◆</span> All pricing in CAD</div>
+          <div class="contact-meta-item"><span>◆</span> Async process — no calls required</div>
+        </div>
+      </div>
+
+      <div class="contact-right reveal reveal-delay-1">
+        <!--
+          TALLY FORM INTEGRATION:
+          Replace this block with your Tally embed code.
+          Example: <iframe data-tally-src="https://tally.so/embed/YOUR_FORM_ID" ...></iframe>
+          
+          For now, showing a styled placeholder form:
+        -->
+        <div class="tally-embed-wrap">
+          <!-- Option A: Paste your Tally embed iframe here -->
+          <!-- Option B: Use the form below as a placeholder -->
+          <form class="contact-form" onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-field">
+                <label>Your Name</label>
+                <input type="text" placeholder="Jane Smith" />
+              </div>
+              <div class="form-field">
+                <label>Company</label>
+                <input type="text" placeholder="Acme Corp" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Email</label>
+              <input type="email" placeholder="jane@acmecorp.com" />
+            </div>
+            <div class="form-field">
+              <label>Package of Interest</label>
+              <select>
+                <option value="">Select a package…</option>
+                <option>Free Sample First</option>
+                <option>Insight Pack — $695</option>
+                <option>Content Amplifier — $1,875</option>
+                <option>Authority Vault — $2,995</option>
+                <option>Monthly Retainer — Let's talk</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Your Content Link + Any Context</label>
+              <textarea rows="4" placeholder="Paste your YouTube, podcast, or recording link here. Tell us a bit about your audience and goals."></textarea>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="consent" />
+              <label for="consent">I agree that the above information will be used to contact me regarding TL;DW Studios services.</label>
+            </div>
+            <div class="form-submit">
+              <button class="btn-submit" type="submit">Submit →</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-bar">
+      <div class="footer-logo">
+        <img src="https://tldwstudios.com/assets/images/image01.jpg" alt="TL;DW Studios"
+             onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-family:Instrument Serif,serif;font-size:0.95rem;color:rgba(245,242,236,0.35);letter-spacing:0.05em;\'>TL;DW Studios</span>'" />
+      </div>
+      <div class="footer-links">
+        <a href="#how">How It Works</a>
+        <a href="#services">Pricing</a>
+        <a href="#proof">Case Study</a>
+        <a href="#faqs">FAQs</a>
+        <a href="/cdn-cgi/l/email-protection#09616c656566497d656d7e7a7d7c6d60667a276a6664">Contact</a>
+      </div>
+      <div class="footer-copy">© 2025 TL;DW Studios. All rights reserved.</div>
+    </div>
+  </div>
+</section>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* ─── Cursor ─── */
+  const cursor = document.getElementById('cursor');
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  let mx = -100, my = -100, rx = -100, ry = -100;
+
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+  function animateCursor() {
+    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+    rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  document.querySelectorAll('a, button, summary, .hero-stat, .aud-item, .result-card, details').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.style.width = '48px'; ring.style.height = '48px';
+      ring.style.borderColor = 'rgba(201,168,76,0.8)';
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.style.width = '32px'; ring.style.height = '32px';
+      ring.style.borderColor = 'rgba(201,168,76,0.5)';
+    });
+  });
+
+  /* ─── Nav scroll ─── */
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ─── Scroll reveal ─── */
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  /* ─── Hero stats count-up ─── */
+  function animateCount(el, target, suffix = '', duration = 1200) {
+    const start = performance.now();
+    const isFloat = target.toString().includes('.');
+    function update(t) {
+      const elapsed = t - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const val = target * ease;
+      el.textContent = isFloat ? val.toFixed(1) + suffix : Math.round(val) + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const nums = e.target.querySelectorAll('.stat-num');
+        nums[0] && animateCount(nums[0], 312, '');
+        nums[1] && animateCount(nums[1], 45, '%');
+        nums[2] && (nums[2].textContent = '1,400+');
+        nums[3] && (nums[3].textContent = '7');
+        statsObserver.unobserve(e.target);
+      }
+    });
+  }, { threshol
