@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sample Project &mdash; TL;DW Studios</title>
+<meta name="description" content="See exactly what TL;DW Studios delivers. View a complete content transformation package." />
+<meta property="og:title" content="Sample Project — TL;DW Studios" />
+<meta property="og:description" content="See exactly what TL;DW Studios delivers. View a complete content transformation package." />
+<meta property="og:url" content="https://tldwstudios.com/sample" />
+<meta property="og:site_name" content="TL;DW Studios" />
+<link rel="canonical" href="https://tldwstudios.com/sample" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3FED3RXVZ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-F3FED3RXVZ');</script>
+<style>
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #2D3748;
+  background: #fff;
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; }
+
+/* ── Layout helpers ──────────────────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.container--narrow { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+.container--post { max-width: 600px; margin: 0 auto; padding: 0 2rem; }
+
+/* ── Gradients ───────────────────────────────────────────── */
+.grad { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-blue { background: #4299E1; color: #fff; }
+.btn-blue:hover { background: #3182CE; box-shadow: 0 8px 20px rgba(66,153,225,0.35); }
+.btn-white { background: #fff; color: #2D3748; }
+.btn-white:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.btn-outline { background: transparent; color: #fff; border-color: #fff; }
+.btn-outline:hover { background: rgba(255,255,255,0.1); }
+.btn-sm { padding: 0.6rem 1.4rem; font-size: 0.9rem; }
+
+/* ── Nav ─────────────────────────────────────────────────── */
+.site-nav {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background: rgba(13,13,13,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+  padding: 14px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.site-nav a.logo {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800; font-size: 1.1rem;
+  color: #fff; letter-spacing: -0.5px;
+}
+.site-nav a.logo span { color: #c9a84c; }
+.nav-right { display: flex; gap: 28px; align-items: center; }
+.nav-right a {
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #8a8580; transition: color 0.3s;
+}
+.nav-right a:hover { color: #f5f2ec; }
+.nav-right .nav-cta {
+  border: 1px solid #c9a84c; color: #c9a84c;
+  padding: 8px 18px; font-size: 0.7rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  transition: background 0.3s;
+}
+.nav-right .nav-cta:hover { background: #c9a84c; color: #0d0d0d; }
+.nav-burger {
+  display: none; flex-direction: column; justify-content: center;
+  gap: 5px; background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-burger span { display: block; width: 24px; height: 2px; background: #f5f2ec; transition: transform 0.3s, opacity 0.3s; }
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu {
+  position: fixed; top: 0; right: -100%; width: 75%; max-width: 300px;
+  height: 100vh; background: #0d0d0d; border-left: 1px solid rgba(201,168,76,0.25);
+  z-index: 1002; display: flex; flex-direction: column;
+  padding: 90px 32px 40px; gap: 8px;
+  transition: right 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a {
+  font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #8a8580; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1);
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: #c9a84c; }
+.mobile-menu .mob-cta {
+  margin-top: 16px; border: 1px solid #c9a84c !important;
+  color: #c9a84c !important; text-align: center; padding: 14px !important;
+}
+.mobile-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6); z-index: 1001;
+}
+.mobile-overlay.open { display: block; }
+
+/* ── Section base ────────────────────────────────────────── */
+section { padding: 4rem 2rem; }
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: #fff;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px; border-radius: 20px; margin-bottom: 1rem;
+}
+.section-label.dark {
+  color: #4299E1; background: rgba(66,153,225,0.1);
+  border: 1px solid rgba(66,153,225,0.3);
+}
+
+/* ── Section 1: Hero ─────────────────────────────────────── */
+#hero {
+  padding: 7rem 2rem 4rem;
+  text-align: center;
+}
+#hero .hero-inner { max-width: 800px; margin: 0 auto; }
+#hero h1 { font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 1rem; line-height: 1.15; }
+#hero .hero-sub { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 0.5rem; }
+#hero .hero-sub2 { font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; }
+.hero-meta {
+  display: inline-flex; flex-wrap: wrap; gap: 1rem;
+  background: rgba(255,255,255,0.12); border-radius: 12px;
+  padding: 1.25rem 2rem; margin-top: 1rem; justify-content: center;
+}
+.hero-meta-item { text-align: left; }
+.hero-meta-item .meta-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+.hero-meta-item .meta-val { font-size: 0.9rem; font-weight: 600; color: #fff; }
+
+/* ── Content Inventory ───────────────────────────────────── */
+#inventory { background: #F7FAFC; padding: 3rem 2rem 4rem; }
+#inventory h2 { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; }
+#inventory .inv-sub { text-align: center; color: #718096; margin-bottom: 2.5rem; }
+.inv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px; margin: 0 auto;
+}
+.inv-card {
+  background: #fff; padding: 2rem;
+  border: 2px solid #E2E8F0; border-radius: 12px;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  cursor: default;
+}
+.inv-card:hover {
+  border-color: #4299E1;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.inv-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.inv-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+.inv-meta { font-size: 0.82rem; color: #4299E1; font-weight: 600; margin-bottom: 0.5rem; }
+.inv-desc { font-size: 0.9rem; color: #718096; line-height: 1.55; }
+
+/* ── Section 2: eBook ────────────────────────────────────── */
+#ebook { background: #F7FAFC; padding: 4rem 2rem; border-top: 1px solid #E2E8F0; }
+#ebook h2 { font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; }
+#ebook .ebook-sub { text-align: center; color: #718096; margin-bottom: 3rem; }
+.ebook-grid {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 3rem; max-width: 1000px; margin: 0 auto;
+  align-items: start;
+}
+.ebook-cover {
+  padding: 3rem 2rem; border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  color: #fff; text-align: center; position: sticky; top: 100px;
+}
+.ebook-cover .cover-eyebrow {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.7); margin-bottom: 1rem;
+}
+.ebook-cover h3 { font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 0.75rem; }
+.ebook-cover .cover-subtitle { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
+.ebook-cover .cover-divider { height: 1px; background: rgba(255,255,255,0.25); margin: 1.5rem 0; }
+.ebook-cover .cover-author { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+.ebook-cover .cover-pages {
+  margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem;
+}
+.ebook-cover .cover-stat { text-align: center; }
+.ebook-cover .cover-stat strong { display: block; font-size: 1.4rem; font-weight: 800; }
+.ebook-cover .cover-stat span { font-size: 0.72rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.1em; }
+
+.ebook-details h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
+.ebook-toc { list-style: none; margin-bottom: 2rem; }
+.ebook-toc li {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 0.6rem 0; border-bottom: 1px solid #E2E8F0; font-size: 0.92rem;
+}
+.ebook-toc li:last-child { border-bottom: none; }
+.ebook-toc .toc-check { color: #48BB78; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+.excerpt {
+  background: #fff; border-left: 4px solid #667eea;
+  border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.excerpt-title { font-size: 0.8rem; font-weight: 700; color: #667eea; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+.excerpt p { font-size: 0.9rem; color: #4A5568; line-height: 1.65; }
+.ebook-cta { margin-top: 1.5rem; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="/" class="logo">TL<span>;</span>DW <span style="color:#8a8580;font-weight:400;font-size:0.85rem;letter-spacing:3px;">STUDIOS</span></a>
+  <div class="nav-right" id="navLinks">
+    <a href="/#how">How It Works</a>
+    <a href="/#services">Pricing</a>
+    <a href="/#proof">Case Study</a>
+    <a href="/#faqs">FAQs</a>
+    <a href="/resources">Resources</a>
+    <a href="/sample" style="color:#c9a84c;">Sample</a>
+    <a href="/#contact" class="nav-cta">Get Sample</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#how" onclick="closeMenu()">How It Works</a>
+  <a href="/#services" onclick="closeMenu()">Pricing</a>
+  <a href="/#proof" onclick="closeMenu()">Case Study</a>
+  <a href="/#faqs" onclick="closeMenu()">FAQs</a>
+  <a href="/resources" onclick="closeMenu()">Resources</a>
+  <a href="/sample" onclick="closeMenu()">Sample</a>
+  <a href="/#contact" class="mob-cta" onclick="closeMenu()">Get Sample</a>
+</div>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+
+<!-- SECTION 1: HERO -->
+<section id="hero" class="grad">
+  <div class="hero-inner">
+    <div class="section-label">Sample Project</div>
+    <h1>Content Transformation<br/>in Action</h1>
+    <p class="hero-sub">See exactly what TL;DW Studios delivers.</p>
+    <p class="hero-sub2">This example shows how we transformed a 60-minute webinar into a complete content ecosystem.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-val">ContentIQ Consulting</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="meta-label">Industry</div>
+        <div class="meta-val">B2B Marketing Advisory</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="meta-label">Topic</div>
+        <div class="meta-val">Building 90-Day Content Engines</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="meta-label">Timeline</div>
+        <div class="meta-val">2 business days</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT INVENTORY -->
+<section id="inventory">
+  <div class="container">
+    <h2>What Was Delivered</h2>
+    <p class="inv-sub">One 60-minute webinar. One month of content.</p>
+    <div class="inv-grid">
+      <div class="inv-card">
+        <div class="inv-icon">&#128216;</div>
+        <div class="inv-title">Professional eBook</div>
+        <div class="inv-meta">12 pages &bull; 3,200 words</div>
+        <div class="inv-desc">Branded PDF guide ready for lead generation and sales enablement.</div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-icon">&#128188;</div>
+        <div class="inv-title">LinkedIn Lead Post</div>
+        <div class="inv-meta">250 words</div>
+        <div class="inv-desc">Compelling post to promote the eBook and drive downloads.</div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-icon">&#128161;</div>
+        <div class="inv-title">5 Thought Leadership Posts</div>
+        <div class="inv-meta">150&ndash;250 words each</div>
+        <div class="inv-desc">Authority-building content tied to key insights from the webinar.</div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-icon">&#127912;</div>
+        <div class="inv-title">LinkedIn Carousel</div>
+        <div class="inv-meta">8 slides</div>
+        <div class="inv-desc">Visual summary optimized for engagement and shares.</div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-icon">&#128221;</div>
+        <div class="inv-title">Blog Article</div>
+        <div class="inv-meta">750 words</div>
+        <div class="inv-desc">SEO-optimized article for website and organic traffic.</div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-icon">&#128236;</div>
+        <div class="inv-title">Email Newsletter</div>
+        <div class="inv-meta">350 words</div>
+        <div class="inv-desc">Engaging email to re-activate your audience and drive traffic.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: EBOOK -->
+<section id="ebook">
+  <div class="container">
+    <h2>The eBook</h2>
+    <p class="ebook-sub">A professionally structured guide extracted from the webinar recording.</p>
+    <div class="ebook-grid">
+      <div class="ebook-cover grad">
+        <div class="cover-eyebrow">Sample eBook</div>
+        <h3>The 90-Day Content Engine</h3>
+        <div class="cover-subtitle">A Framework for B2B Marketing Teams</div>
+        <div class="cover-divider"></div>
+        <div class="cover-author">By Sarah Mitchell &amp; Marcus Chen<br/>ContentIQ Consulting</div>
+        <div class="cover-pages">
+          <div class="cover-stat"><strong>12</strong><span>Pages</span></div>
+          <div class="cover-stat"><strong>3,200</strong><span>Words</span></div>
+          <div class="cover-stat"><strong>12</strong><span>Insights</span></div>
+        </div>
+      </div>
+      <div class="ebook-details">
+        <h4>What&rsquo;s Inside</h4>
+        <ul class="ebook-toc">
+          <li><span class="toc-check">&#10003;</span> Introduction: The Content Multiplication Problem</li>
+          <li><span class="toc-check">&#10003;</span> 12 strategic insights on content repurposing</li>
+          <li><span class="toc-check">&#10003;</span> The 90-Day Content Engine Framework</li>
+          <li><span class="toc-check">&#10003;</span> Real quotes from industry experts</li>
+          <li><span class="toc-check">&#10003;</span> Actionable next steps and implementation guide</li>
+          <li><span class="toc-check">&#10003;</span> Resources and tools reference section</li>
+        </ul>
+
+        <h4 style="margin-bottom:1rem;">Sample Excerpts</h4>
+
+        <div class="excerpt">
+          <div class="excerpt-title">Insight #3: The 10x Content Principle</div>
+          <p>Most B2B teams operate under a fundamental misconception: they believe creating more content is the answer to visibility problems. But the real constraint is not creation. It is extraction and distribution. A single hour of expert conversation contains enough insight to fuel three months of strategic content. The problem is that most organizations treat that hour as a finished product rather than raw material. The 10x Content Principle states that every piece of long-form content should generate at least ten derivative assets, each optimized for different channels, audiences, and objectives.</p>
+        </div>
+
+        <div class="excerpt">
+          <div class="excerpt-title">Insight #7: Authority Compounds, Not Replaces</div>
+          <p>One of the most common errors in B2B content strategy is treating each piece of content as standalone. But authority does not build linearly. It compounds. When your eBook references concepts from your LinkedIn posts, when your newsletter deepens ideas from your blog, when your webinar builds on frameworks established in your written content, you create what we call &ldquo;content gravity.&rdquo; Each piece pulls harder because previous pieces exist.</p>
+        </div>
+
+        <div class="ebook-cta">
+          <a href="/#contact" class="btn btn-blue">Download Full Sample eBook &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SECTION 3: LINKEDIN POSTS -->
+<section id="linkedin" style="background:#fff;">
+  <div class="container">
+    <h2 style="font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.5rem;">LinkedIn Posts</h2>
+    <p style="text-align:center;color:#718096;margin-bottom:3rem;">Engagement-ready posts for the host and speakers &mdash; published over 4&ndash;6 weeks.</p>
+
+    <!-- Post 1 -->
+    <div style="max-width:600px;margin:0 auto 2rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#EBF8FF;color:#2B6CB0;padding:4px 12px;border-radius:20px;">Lead Magnet Post</span>
+      </div>
+      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem;flex-shrink:0;">SM</div>
+          <div>
+            <div style="font-weight:700;font-size:0.92rem;">Sarah Mitchell</div>
+            <div style="font-size:0.78rem;color:#718096;">CEO at ContentIQ Consulting &bull; 2d &bull; Edited</div>
+          </div>
+        </div>
+        <div style="font-size:0.92rem;color:#2D3748;line-height:1.7;">
+          <p style="margin-bottom:0.75rem;">Your team just delivered a great webinar.</p>
+          <p style="margin-bottom:0.75rem;">Strong insights. Smart questions. Real expertise on display.</p>
+          <p style="margin-bottom:0.75rem;">Then it ended. And 48 hours later, almost no one is talking about it.</p>
+          <p style="margin-bottom:0.75rem;">That is the gap most B2B teams do not address.</p>
+          <p style="margin-bottom:0.75rem;">The webinar was not the finish line. It was the starting material.</p>
+          <p style="margin-bottom:0.75rem;">Here is what actually happens to most webinar recordings: They get posted to a YouTube channel with 14 subscribers. They get linked in one follow up email that 11% of people open. They get mentioned in Slack once, then buried under 600 other messages.</p>
+          <p style="margin-bottom:0.75rem;">And that is it. Thousands of dollars in production cost. Weeks of coordination. An hour of genuine expertise. All of it generates value for exactly 90 minutes.</p>
+          <p style="margin-bottom:0.75rem;">The teams that win do something different. They treat long-form content as raw material, not finished product. One webinar becomes an eBook. That eBook becomes 15 LinkedIn posts. Those posts become a blog series. That blog series feeds a quarterly newsletter.</p>
+          <p style="margin-bottom:0.75rem;">Same work. 10x the impact.</p>
+          <p style="margin-bottom:0.75rem;">We just published a new framework on exactly how to do this. It is called The 90-Day Content Engine, and it walks through the system we have used with 40+ B2B marketing teams.</p>
+          <p>Download the full guide here &rarr;</p>
+        </div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #E2E8F0;display:flex;gap:1.5rem;">
+          <span style="font-size:0.8rem;color:#718096;">&#128077; 124 reactions</span>
+          <span style="font-size:0.8rem;color:#718096;">&#128172; 18 comments</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div style="max-width:600px;margin:0 auto 2rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#F0FFF4;color:#276749;padding:4px 12px;border-radius:20px;">Thought Leadership Post #1</span>
+      </div>
+      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#48BB78,#38A169);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem;flex-shrink:0;">MC</div>
+          <div>
+            <div style="font-weight:700;font-size:0.92rem;">Marcus Chen</div>
+            <div style="font-size:0.78rem;color:#718096;">Head of Content Strategy at ContentIQ &bull; 5d</div>
+          </div>
+        </div>
+        <div style="font-size:0.92rem;color:#2D3748;line-height:1.7;">
+          <p style="margin-bottom:0.75rem;">Most B2B content strategies fail because they optimize for the wrong metric.</p>
+          <p style="margin-bottom:0.75rem;">Volume is easy to measure. Posts per week. Articles per month. Webinars per quarter.</p>
+          <p style="margin-bottom:0.75rem;">But volume is not the constraint. Extraction is.</p>
+          <p style="margin-bottom:0.75rem;">I see marketing teams running four webinars a month while their best content from Q1 sits unused in a Google Drive folder. They are creating more instead of using what they already have.</p>
+          <p style="margin-bottom:0.75rem;">The shift that changes everything is treating finished content as raw material.</p>
+          <p style="margin-bottom:0.75rem;">A 60-minute webinar is not one asset. It is 15 assets waiting to be extracted: An eBook that positions your expertise. LinkedIn posts that drive daily engagement. A blog article that ranks for SEO. An email series that re-engages your list. Quote graphics that extend reach. A carousel that gets shared.</p>
+          <p style="margin-bottom:0.75rem;">Same webinar. Zero additional expert time. Completely different impact.</p>
+          <p>If your content strategy is built on &ldquo;create more,&rdquo; you will always be underwater. If it is built on &ldquo;extract better,&rdquo; you will compound faster than your competition can create.</p>
+        </div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #E2E8F0;display:flex;gap:1.5rem;">
+          <span style="font-size:0.8rem;color:#718096;">&#128077; 89 reactions</span>
+          <span style="font-size:0.8rem;color:#718096;">&#128172; 12 comments</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div style="max-width:600px;margin:0 auto 2rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#FAF5FF;color:#6B46C1;padding:4px 12px;border-radius:20px;">Thought Leadership Post #2</span>
+      </div>
+      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem;flex-shrink:0;">SM</div>
+          <div>
+            <div style="font-weight:700;font-size:0.92rem;">Sarah Mitchell</div>
+            <div style="font-size:0.78rem;color:#718096;">CEO at ContentIQ Consulting &bull; 1w</div>
+          </div>
+        </div>
+        <div style="font-size:0.92rem;color:#2D3748;line-height:1.7;">
+          <p style="margin-bottom:0.75rem;">Your best content is probably sitting in a folder no one opens.</p>
+          <p style="margin-bottom:0.75rem;">I talked to a VP of Marketing last week. Her team runs monthly webinars. Great speakers. Strong attendance. Real value delivered.</p>
+          <p style="margin-bottom:0.75rem;">I asked how they use the recordings. She said they post them to their resource center. Maybe share the link once on LinkedIn.</p>
+          <p style="margin-bottom:0.75rem;">Twelve webinars from last year. Twelve hours of expert thinking. Maybe 200 total views across all of them combined.</p>
+          <p style="margin-bottom:0.75rem;">This is not a her problem. This is an industry problem.</p>
+          <p style="margin-bottom:0.75rem;">Most B2B companies have a content graveyard. Recorded webinars. Conference presentations. Podcast interviews. All of it valuable. Almost none of it working.</p>
+          <p style="margin-bottom:0.75rem;">The companies that are winning have figured out something simple: finished content is just the starting point.</p>
+          <p style="margin-bottom:0.75rem;">They are not asking &ldquo;How do we get more people to watch the replay?&rdquo; They are asking &ldquo;What can we build from the insights in this recording?&rdquo;</p>
+          <p>If you have a content graveyard, you do not have a content problem. You have an extraction problem.</p>
+        </div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #E2E8F0;display:flex;gap:1.5rem;">
+          <span style="font-size:0.8rem;color:#718096;">&#128077; 156 reactions</span>
+          <span style="font-size:0.8rem;color:#718096;">&#128172; 24 comments</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;color:#718096;font-size:0.9rem;font-style:italic;">+ 3 additional thought leadership posts included in full package</div>
+  </div>
+</section>
+
+<!-- SECTION 4: BLOG + NEWSLETTER -->
+<section id="content" style="background:#F7FAFC;padding:4rem 2rem;">
+  <div class="container">
+    <h2 style="font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.5rem;">Blog &amp; Newsletter</h2>
+    <p style="text-align:center;color:#718096;margin-bottom:3rem;">Long-form and email content to extend reach across every channel.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:1100px;margin:0 auto;" class="blog-newsletter-grid">
+
+      <!-- Blog -->
+      <div>
+        <div class="section-label dark" style="margin-bottom:1.5rem;">Blog Article</div>
+        <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+          <div class="grad" style="padding:2rem;">
+            <h3 style="color:#fff;font-size:1.4rem;font-weight:800;line-height:1.3;margin-bottom:0.5rem;">Why Your Best Webinar Content Dies After 60 Minutes</h3>
+            <p style="color:rgba(255,255,255,0.75);font-size:0.85rem;">By Sarah Mitchell &bull; 8 min read</p>
+          </div>
+          <div style="padding:1.75rem;">
+            <p style="font-size:0.92rem;color:#4A5568;line-height:1.7;margin-bottom:1rem;">Every quarter, B2B marketing teams invest thousands of dollars and dozens of hours into producing webinars. They coordinate with subject matter experts, build slide decks, promote the event, manage registrations, and deliver an hour of genuine expertise to their audience.</p>
+            <p style="font-size:0.92rem;color:#4A5568;line-height:1.7;margin-bottom:1rem;">Then the webinar ends. The recording gets posted somewhere. Maybe it gets mentioned in a follow-up email. And then it quietly fades into the content graveyard.</p>
+            <h4 style="font-size:1rem;font-weight:700;margin:1.25rem 0 0.5rem;color:#2D3748;">The Real Cost of One-and-Done Content</h4>
+            <p style="font-size:0.92rem;color:#4A5568;line-height:1.7;margin-bottom:1rem;">Consider what goes into producing a single high-quality webinar. The subject matter expert spends 3&ndash;5 hours preparing. The marketing team spends 10&ndash;15 hours on promotion, logistics, and production. The content might generate 200&ndash;500 live attendees, but after the event, engagement drops to nearly zero.</p>
+            <h4 style="font-size:1rem;font-weight:700;margin:1.25rem 0 0.5rem;color:#2D3748;">The Content Multiplication Framework</h4>
+            <p style="font-size:0.92rem;color:#4A5568;line-height:1.7;margin-bottom:1.5rem;">The companies that are getting this right have shifted their thinking entirely. They do not ask &ldquo;How do we get more people to watch the replay?&rdquo; Instead, they ask &ldquo;What can we build from the insights in this recording?&rdquo;</p>
+            <a href="/#contact" class="btn btn-blue btn-sm">Download the Framework &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <div class="section-label dark" style="margin-bottom:1.5rem;">Email Newsletter</div>
+        <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+          <div style="background:#E2E8F0;padding:1rem 1.5rem;font-size:0.82rem;color:#4A5568;">
+            <div><strong>From:</strong> Sarah Mitchell &lt;sarah@contentiq.com&gt;</div>
+            <div><strong>Subject:</strong> The content you&rsquo;re already creating (but not using)</div>
+          </div>
+          <div style="padding:1.75rem;">
+            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">Hi [Name],</p>
+            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">Quick question: How many hours did your team spend on webinars last quarter?</p>
+            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">Now, how many of those recordings are still generating value today?</p>
+            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">If you are like most B2B marketing teams, the answer is zero. The webinar happened. It was good. Then it disappeared into a Google Drive folder no one opens.</p>
+            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">Every webinar your team produces contains enough strategic insight to fuel three months of content marketing. The problem is that most organizations treat that webinar as a finished product rather than raw material.</p>
+            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">The teams that win do not create more content. They extract better. They treat every hour of expert conversation as the foundation for an eBook, 15 LinkedIn posts, a blog series, an email sequence, and a library of sales enablement materials.</p>
+            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1.5rem;">Same work. 10x the impact.</p>
+            <div style="margin:1.5rem 0;">
+              <a href="/#contact" class="btn btn-blue btn-sm">Read the Full Framework &rarr;</a>
+            </div>
+            <p style="font-size:0.92rem;color:#2D3748;margin-top:1rem;">Let me know what you think.<br/><br/>Sarah</p>
+          </div>
+          <div style="background:#E2E8F0;padding:1rem 1.5rem;text-align:center;font-size:0.78rem;color:#718096;">
+            ContentIQ Consulting &bull; Helping B2B Teams Build Authority Through Content<br/>
+            <a href="#" style="color:#718096;">Unsubscribe</a> &bull; <a href="#" style="color:#718096;">Update Preferences</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: CAROUSEL + CTA -->
+<section id="carousel" style="background:#F7FAFC;padding:4rem 2rem;border-top:1px solid #E2E8F0;">
+  <div class="container">
+    <h2 style="font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.5rem;">LinkedIn Carousel</h2>
+    <p style="text-align:center;color:#718096;margin-bottom:3rem;">8-slide visual summary optimized for engagement and shares.</p>
+    <div class="carousel-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1000px;margin:0 auto;">
+      <div class="cs"><div class="cs-num">Slide 1</div><div><div class="cs-title">Your webinar isn&rsquo;t dead.</div><div class="cs-text">You&rsquo;re just not using it right.</div></div></div>
+      <div class="cs"><div class="cs-num">Slide 2</div><div><div class="cs-title">The Problem</div><div class="cs-text">Most teams spend weeks creating a webinar, then post it once and move on.</div></div></div>
+      <div class="cs"><div class="cs-num">Slide 3</div><div><div class="cs-title">The Reality</div><div class="cs-text">One hour of expert content contains enough insight to fuel 90 days of marketing.</div></div></div>
+      <div class="cs"><div class="cs-num">Slide 4</div><div><div class="cs-title">Step 1: Extract</div><div class="cs-text">Identify 10&ndash;15 key insights from the recording.</div></div></div>
+      <div class="cs"><div class="cs-num">Slide 5</div><div><div class="cs-title">Step 2: Structure</div><div class="cs-text">Turn those insights into an eBook that serves as your anchor asset.</div></div></div>
+      <div class="cs"><div class="cs-num">Slide 6</div><div><div class="cs-title">Step 3: Distribute</div><div class="cs-text">Break insights into LinkedIn posts, blog articles, and email content.</div></div></div>
+      <div class="cs"><div class="cs-num">Slide 7</div><div><div class="cs-title">The Result</div><div class="cs-text">Same expert time. 10x the reach. Content that compounds instead of disappears.</div></div></div>
+      <div class="cs cs-green"><div class="cs-num">Slide 8</div><div><div class="cs-title">Want the full framework?</div><div class="cs-text">Download our 90-Day Content Engine guide.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.cs {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px; padding: 1.25rem;
+  display: flex; flex-direction: column;
+  justify-content: space-between; color: #fff;
+}
+.cs-green { background: linear-gradient(135deg, #48BB78, #38A169); }
+.cs-num { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
+.cs-title { font-size: 1.05rem; font-weight: 800; line-height: 1.25; margin-bottom: 0.4rem; }
+.cs-text { font-size: 0.78rem; color: rgba(255,255,255,0.8); line-height: 1.45; }
+</style>
+
+<!-- FINAL CTA -->
+<section id="final-cta" class="grad" style="padding:5rem 2rem;text-align:center;">
+  <div style="max-width:800px;margin:0 auto;">
+    <h2 style="font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:1rem;">Want This for Your Content?</h2>
+    <p style="font-size:1.1rem;color:rgba(255,255,255,0.85);margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;">Transform your webinars, podcasts, and presentations into authority-building content that works for months.</p>
+    <div class="cta-btns" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/#services" class="btn btn-white">See Pricing</a>
+      <a href="/#contact" class="btn btn-outline">Request Custom Sample</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0d0d0d;border-top:1px solid rgba(201,168,76,0.25);padding:40px 0;">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" height="40" aria-label="TL;DW Studios">
+        <text x="4" y="52" font-family="'Arial Black','Impact',sans-serif" font-weight="900" font-size="56" fill="rgba(245,242,236,0.35)" letter-spacing="-1">TL;DW</text>
+        <text x="6" y="72" font-family="'Arial',sans-serif" font-weight="400" font-size="14" fill="rgba(201,168,76,0.35)" letter-spacing="8">STUDIOS</text>
+      </svg>
+      <div style="display:flex;gap:28px;flex-wrap:wrap;">
+        <a href="/#how" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">How It Works</a>
+        <a href="/#services" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">Pricing</a>
+        <a href="/#proof" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">Case Study</a>
+        <a href="/#faqs" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">FAQs</a>
+        <a href="/resources" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">Resources</a>
+        <a href="mailto:hello@tldwstudios.com" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">Contact</a>
+      </div>
+      <div style="font-size:0.68rem;color:rgba(138,133,128,0.4);font-family:monospace;">&copy; 2025 TL;DW Studios. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<style>
+.blog-newsletter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+@media (max-width: 768px) {
+  #hero h1 { font-size: 2rem !important; }
+  section h2 { font-size: 2rem !important; }
+  .ebook-grid { grid-template-columns: 1fr !important; }
+  .ebook-cover { position: static !important; }
+  .blog-newsletter-grid { grid-template-columns: 1fr !important; }
+  .carousel-grid { grid-template-columns: repeat(2,1fr) !important; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .hero-meta { flex-direction: column; text-align: center; }
+  .site-nav { padding: 14px 20px; }
+  #navLinks { display: none !important; }
+  .nav-burger { display: flex !important; }
+}
+@media (min-width: 769px) {
+  .nav-burger { display: none !important; }
+}
+footer a:hover { color: #c9a84c !important; }
+</style>
+
+<script>
+function toggleMenu() {
+  var m = document.getElementById('mobileMenu');
+  var o = document.getElementById('mobileOverlay');
+  var b = document.getElementById('navBurger');
+  m.classList.toggle('open');
+  o.classList.toggle('open');
+  b.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mobileOverlay').classList.remove('open');
+  document.getElementById('navBurger').classList.remove('open');
+}
+</script>
+</body>
+</html>
