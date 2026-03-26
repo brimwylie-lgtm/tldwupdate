@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sample Project &mdash; TL;DW Studios</title>
-<meta name="description" content="See exactly what TL;DW Studios delivers. View a complete content transformation package." />
-<meta property="og:title" content="Sample Project — TL;DW Studios" />
-<meta property="og:description" content="See exactly what TL;DW Studios delivers. View a complete content transformation package." />
+<title>Preview: Ipsos Webinar Transformation | TL;DW Studios</title>
+<meta name="description" content="See what TL;DW Studios could create from your webinar content. This preview shows a complete transformation of the Ipsos Reputation, Risk and Resilience discussion." />
+<meta property="og:title" content="Preview: Ipsos Webinar Transformation | TL;DW Studios" />
+<meta property="og:description" content="See what TL;DW Studios could create from your webinar content. A complete transformation preview based on the Reputation, Risk and Resilience webinar." />
 <meta property="og:url" content="https://tldwstudios.com/sample" />
-<meta property="og:site_name" content="TL;DW Studios" />
 <link rel="canonical" href="https://tldwstudios.com/sample" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,221 +16,182 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3FED3RXVZ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-F3FED3RXVZ');</script>
 <style>
-/* ── Reset & Base ─────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: #2D3748;
-  background: #fff;
-  line-height: 1.6;
-}
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#2D3748;background:#fff;line-height:1.65;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem;}
+.grad{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);}
+.btn{display:inline-block;padding:1rem 2.5rem;font-size:1.05rem;font-weight:600;border-radius:6px;cursor:pointer;transition:all 0.2s;border:2px solid transparent;}
+.btn:hover{transform:translateY(-2px);}
+.btn-blue{background:#4299E1;color:#fff;}
+.btn-blue:hover{background:#3182CE;box-shadow:0 8px 20px rgba(66,153,225,0.35);}
+.btn-white{background:#fff;color:#2D3748;}
+.btn-white:hover{box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.btn-outline{background:transparent;color:#fff;border-color:#fff;}
+.btn-outline:hover{background:rgba(255,255,255,0.1);}
+.btn-sm{padding:0.6rem 1.4rem;font-size:0.9rem;}
 
-/* ── Layout helpers ──────────────────────────────────────── */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-.container--narrow { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
-.container--post { max-width: 600px; margin: 0 auto; padding: 0 2rem; }
+/* NAV */
+.site-nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.25);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;}
+.site-nav .logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:-0.5px;}
+.site-nav .logo span{color:#c9a84c;}
+.nav-right{display:flex;gap:24px;align-items:center;}
+.nav-right a{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;transition:color 0.3s;}
+.nav-right a:hover{color:#f5f2ec;}
+.nav-right .nav-cta{border:1px solid #c9a84c;color:#c9a84c;padding:7px 16px;transition:background 0.3s;}
+.nav-right .nav-cta:hover{background:#c9a84c;color:#0d0d0d;}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-burger span{display:block;width:24px;height:2px;background:#f5f2ec;transition:transform 0.3s,opacity 0.3s;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:-100%;width:75%;max-width:300px;height:100vh;background:#0d0d0d;border-left:1px solid rgba(201,168,76,0.25);z-index:1002;display:flex;flex-direction:column;padding:90px 32px 40px;gap:8px;transition:right 0.35s cubic-bezier(0.22,1,0.36,1);}
+.mobile-menu.open{right:0;}
+.mobile-menu a{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#8a8580;padding:14px 0;border-bottom:1px solid rgba(201,168,76,0.1);transition:color 0.3s;}
+.mobile-menu a:hover{color:#c9a84c;}
+.mobile-menu .mob-cta{margin-top:16px;border:1px solid #c9a84c!important;color:#c9a84c!important;text-align:center;padding:14px!important;}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1001;}
+.mobile-overlay.open{display:block;}
 
-/* ── Gradients ───────────────────────────────────────────── */
-.grad { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+/* PROPOSED BADGE */
+.proposed-badge{display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:0.5rem 1rem;border-radius:20px;font-size:0.82rem;font-weight:600;letter-spacing:0.5px;margin-bottom:1.25rem;}
 
-/* ── Buttons ─────────────────────────────────────────────── */
-.btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  border: 2px solid transparent;
-}
-.btn:hover { transform: translateY(-2px); }
-.btn-blue { background: #4299E1; color: #fff; }
-.btn-blue:hover { background: #3182CE; box-shadow: 0 8px 20px rgba(66,153,225,0.35); }
-.btn-white { background: #fff; color: #2D3748; }
-.btn-white:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-.btn-outline { background: transparent; color: #fff; border-color: #fff; }
-.btn-outline:hover { background: rgba(255,255,255,0.1); }
-.btn-sm { padding: 0.6rem 1.4rem; font-size: 0.9rem; }
+/* HERO */
+#hero{padding:7rem 2rem 4rem;text-align:center;}
+#hero .hero-inner{max-width:800px;margin:0 auto;}
+#hero h1{font-size:3rem;font-weight:800;color:#fff;margin-bottom:1rem;line-height:1.15;}
+#hero .hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.88);margin-bottom:0.4rem;}
+#hero .hero-sub2{font-size:0.97rem;color:rgba(255,255,255,0.72);margin-bottom:1.75rem;}
+.hero-meta{display:inline-flex;flex-wrap:wrap;gap:1rem;background:rgba(255,255,255,0.12);border-radius:12px;padding:1.25rem 2rem;margin:1rem 0;justify-content:center;}
+.hero-meta-item .meta-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin-bottom:2px;}
+.hero-meta-item .meta-val{font-size:0.88rem;font-weight:600;color:#fff;}
+.hero-disclaimer{font-size:0.82rem;color:rgba(255,255,255,0.6);max-width:640px;margin:1.25rem auto 0;line-height:1.6;font-style:italic;}
 
-/* ── Nav ─────────────────────────────────────────────────── */
-.site-nav {
-  position: fixed; top: 0; width: 100%; z-index: 1000;
-  background: rgba(13,13,13,0.95); backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,168,76,0.25);
-  padding: 14px 40px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.site-nav a.logo {
-  font-family: 'Inter', sans-serif;
-  font-weight: 800; font-size: 1.1rem;
-  color: #fff; letter-spacing: -0.5px;
-}
-.site-nav a.logo span { color: #c9a84c; }
-.nav-right { display: flex; gap: 28px; align-items: center; }
-.nav-right a {
-  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: #8a8580; transition: color 0.3s;
-}
-.nav-right a:hover { color: #f5f2ec; }
-.nav-right .nav-cta {
-  border: 1px solid #c9a84c; color: #c9a84c;
-  padding: 8px 18px; font-size: 0.7rem;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  transition: background 0.3s;
-}
-.nav-right .nav-cta:hover { background: #c9a84c; color: #0d0d0d; }
-.nav-burger {
-  display: none; flex-direction: column; justify-content: center;
-  gap: 5px; background: none; border: none; cursor: pointer; padding: 4px;
-}
-.nav-burger span { display: block; width: 24px; height: 2px; background: #f5f2ec; transition: transform 0.3s, opacity 0.3s; }
-.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-burger.open span:nth-child(2) { opacity: 0; }
-.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-menu {
-  position: fixed; top: 0; right: -100%; width: 75%; max-width: 300px;
-  height: 100vh; background: #0d0d0d; border-left: 1px solid rgba(201,168,76,0.25);
-  z-index: 1002; display: flex; flex-direction: column;
-  padding: 90px 32px 40px; gap: 8px;
-  transition: right 0.35s cubic-bezier(0.22,1,0.36,1);
-}
-.mobile-menu.open { right: 0; }
-.mobile-menu a {
-  font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: #8a8580; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1);
-  transition: color 0.3s;
-}
-.mobile-menu a:hover { color: #c9a84c; }
-.mobile-menu .mob-cta {
-  margin-top: 16px; border: 1px solid #c9a84c !important;
-  color: #c9a84c !important; text-align: center; padding: 14px !important;
-}
-.mobile-overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.6); z-index: 1001;
-}
-.mobile-overlay.open { display: block; }
+/* INVENTORY */
+#inventory{background:#F7FAFC;padding:3.5rem 2rem 4rem;}
+#inventory h2{font-size:2rem;font-weight:700;text-align:center;margin-bottom:0.4rem;}
+#inventory .inv-sub{text-align:center;color:#718096;margin-bottom:2.5rem;}
+.inv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto;}
+.inv-card{background:#fff;padding:2rem;border:2px solid #E2E8F0;border-radius:12px;transition:all 0.25s;cursor:default;}
+.inv-card:hover{border-color:#4299E1;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.08);}
+.inv-icon{font-size:2rem;margin-bottom:0.75rem;}
+.inv-title{font-size:1.02rem;font-weight:700;margin-bottom:0.25rem;}
+.inv-meta{font-size:0.8rem;color:#4299E1;font-weight:600;margin-bottom:0.5rem;}
+.inv-desc{font-size:0.88rem;color:#718096;line-height:1.55;}
 
-/* ── Section base ────────────────────────────────────────── */
-section { padding: 4rem 2rem; }
-.section-label {
-  display: inline-block;
-  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; color: #fff;
-  background: rgba(255,255,255,0.2);
-  padding: 4px 12px; border-radius: 20px; margin-bottom: 1rem;
-}
-.section-label.dark {
-  color: #4299E1; background: rgba(66,153,225,0.1);
-  border: 1px solid rgba(66,153,225,0.3);
-}
+/* EBOOK */
+#ebook{background:#F7FAFC;padding:4rem 2rem;border-top:1px solid #E2E8F0;}
+#ebook h2{font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.4rem;}
+#ebook .ebook-sub{text-align:center;color:#718096;margin-bottom:3rem;}
+.ebook-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;max-width:1000px;margin:0 auto;align-items:start;}
+.ebook-cover{padding:3rem 2rem;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,0.15);color:#fff;text-align:center;position:sticky;top:100px;}
+.ebook-cover .cover-eyebrow{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.65);margin-bottom:1rem;}
+.ebook-cover h3{font-size:1.7rem;font-weight:800;line-height:1.2;margin-bottom:0.75rem;}
+.ebook-cover .cover-subtitle{font-size:0.9rem;color:rgba(255,255,255,0.78);margin-bottom:2rem;}
+.ebook-cover .cover-divider{height:1px;background:rgba(255,255,255,0.25);margin:1.5rem 0;}
+.ebook-cover .cover-author{font-size:0.85rem;color:rgba(255,255,255,0.72);line-height:1.5;}
+.ebook-cover .cover-stats{margin-top:1.5rem;display:flex;justify-content:center;gap:1.5rem;}
+.cover-stat strong{display:block;font-size:1.4rem;font-weight:800;}
+.cover-stat span{font-size:0.68rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.1em;}
+.ebook-details h4{font-size:1.15rem;font-weight:700;margin-bottom:1rem;}
+.ebook-toc{list-style:none;margin-bottom:2rem;}
+.ebook-toc li{display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid #E2E8F0;font-size:0.91rem;}
+.ebook-toc li:last-child{border-bottom:none;}
+.toc-check{color:#48BB78;font-weight:700;flex-shrink:0;margin-top:2px;}
+.excerpt{background:#fff;border-left:4px solid #667eea;border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin-bottom:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.excerpt-title{font-size:0.78rem;font-weight:700;color:#667eea;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;}
+.excerpt p{font-size:0.9rem;color:#4A5568;line-height:1.68;}
 
-/* ── Section 1: Hero ─────────────────────────────────────── */
-#hero {
-  padding: 7rem 2rem 4rem;
-  text-align: center;
-}
-#hero .hero-inner { max-width: 800px; margin: 0 auto; }
-#hero h1 { font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 1rem; line-height: 1.15; }
-#hero .hero-sub { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 0.5rem; }
-#hero .hero-sub2 { font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; }
-.hero-meta {
-  display: inline-flex; flex-wrap: wrap; gap: 1rem;
-  background: rgba(255,255,255,0.12); border-radius: 12px;
-  padding: 1.25rem 2rem; margin-top: 1rem; justify-content: center;
-}
-.hero-meta-item { text-align: left; }
-.hero-meta-item .meta-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
-.hero-meta-item .meta-val { font-size: 0.9rem; font-weight: 600; color: #fff; }
+/* LINKEDIN POSTS */
+#linkedin{background:#fff;padding:4rem 2rem;}
+#linkedin h2{font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.4rem;}
+#linkedin .li-sub{text-align:center;color:#718096;margin-bottom:3rem;}
+.li-post-wrap{max-width:600px;margin:0 auto 2rem;}
+.li-badge{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:0.75rem;}
+.li-badge-blue{background:#EBF8FF;color:#2B6CB0;}
+.li-badge-green{background:#F0FFF4;color:#276749;}
+.li-badge-purple{background:#FAF5FF;color:#6B46C1;}
+.li-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.li-author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;}
+.li-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.88rem;flex-shrink:0;}
+.li-av-purple{background:linear-gradient(135deg,#667eea,#764ba2);}
+.li-av-green{background:linear-gradient(135deg,#48BB78,#38A169);}
+.li-author-name{font-weight:700;font-size:0.9rem;}
+.li-author-meta{font-size:0.76rem;color:#718096;}
+.li-body{font-size:0.9rem;color:#2D3748;line-height:1.72;}
+.li-body p{margin-bottom:0.75rem;}
+.li-body p:last-child{margin-bottom:0;}
+.li-stats{margin-top:1rem;padding-top:1rem;border-top:1px solid #E2E8F0;display:flex;gap:1.5rem;}
+.li-stats span{font-size:0.78rem;color:#718096;}
+.li-more-note{text-align:center;color:#718096;font-size:0.88rem;font-style:italic;}
 
-/* ── Content Inventory ───────────────────────────────────── */
-#inventory { background: #F7FAFC; padding: 3rem 2rem 4rem; }
-#inventory h2 { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; }
-#inventory .inv-sub { text-align: center; color: #718096; margin-bottom: 2.5rem; }
-.inv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  max-width: 1000px; margin: 0 auto;
-}
-.inv-card {
-  background: #fff; padding: 2rem;
-  border: 2px solid #E2E8F0; border-radius: 12px;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-  cursor: default;
-}
-.inv-card:hover {
-  border-color: #4299E1;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-.inv-icon { font-size: 2rem; margin-bottom: 0.75rem; }
-.inv-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
-.inv-meta { font-size: 0.82rem; color: #4299E1; font-weight: 600; margin-bottom: 0.5rem; }
-.inv-desc { font-size: 0.9rem; color: #718096; line-height: 1.55; }
+/* BLOG + NEWSLETTER */
+#content{background:#F7FAFC;padding:4rem 2rem;}
+#content h2{font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.4rem;}
+#content .content-sub{text-align:center;color:#718096;margin-bottom:3rem;}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:1100px;margin:0 auto;}
+.section-label-pill{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(66,153,225,0.1);color:#4299E1;border:1px solid rgba(66,153,225,0.3);padding:4px 12px;border-radius:20px;margin-bottom:1.25rem;}
+.preview-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+.preview-card-header{padding:2rem;}
+.preview-card-body{padding:1.75rem;}
+.preview-card-body p{font-size:0.9rem;color:#4A5568;line-height:1.7;margin-bottom:1rem;}
+.preview-card-body h4{font-size:0.98rem;font-weight:700;color:#2D3748;margin:1.25rem 0 0.5rem;}
+.email-header-bar{background:#E2E8F0;padding:1rem 1.5rem;font-size:0.8rem;color:#4A5568;}
+.email-footer-bar{background:#E2E8F0;padding:1rem 1.5rem;text-align:center;font-size:0.76rem;color:#718096;}
 
-/* ── Section 2: eBook ────────────────────────────────────── */
-#ebook { background: #F7FAFC; padding: 4rem 2rem; border-top: 1px solid #E2E8F0; }
-#ebook h2 { font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; }
-#ebook .ebook-sub { text-align: center; color: #718096; margin-bottom: 3rem; }
-.ebook-grid {
-  display: grid; grid-template-columns: 1fr 1.5fr;
-  gap: 3rem; max-width: 1000px; margin: 0 auto;
-  align-items: start;
-}
-.ebook-cover {
-  padding: 3rem 2rem; border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  color: #fff; text-align: center; position: sticky; top: 100px;
-}
-.ebook-cover .cover-eyebrow {
-  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.7); margin-bottom: 1rem;
-}
-.ebook-cover h3 { font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 0.75rem; }
-.ebook-cover .cover-subtitle { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
-.ebook-cover .cover-divider { height: 1px; background: rgba(255,255,255,0.25); margin: 1.5rem 0; }
-.ebook-cover .cover-author { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
-.ebook-cover .cover-pages {
-  margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem;
-}
-.ebook-cover .cover-stat { text-align: center; }
-.ebook-cover .cover-stat strong { display: block; font-size: 1.4rem; font-weight: 800; }
-.ebook-cover .cover-stat span { font-size: 0.72rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.1em; }
+/* CAROUSEL */
+#carousel{background:#F7FAFC;padding:4rem 2rem;border-top:1px solid #E2E8F0;}
+#carousel h2{font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.4rem;}
+#carousel .car-sub{text-align:center;color:#718096;margin-bottom:3rem;}
+.carousel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;max-width:1100px;margin:0 auto;}
+.cs{aspect-ratio:1;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:8px;padding:1.25rem;display:flex;flex-direction:column;justify-content:space-between;color:#fff;}
+.cs-last{background:linear-gradient(135deg,#ED8936,#DD6B20);}
+.cs-num{font-size:0.62rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin-bottom:0.4rem;}
+.cs-title{font-size:1rem;font-weight:800;line-height:1.2;margin-bottom:0.35rem;}
+.cs-text{font-size:0.74rem;color:rgba(255,255,255,0.8);line-height:1.45;}
 
-.ebook-details h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
-.ebook-toc { list-style: none; margin-bottom: 2rem; }
-.ebook-toc li {
-  display: flex; align-items: flex-start; gap: 0.75rem;
-  padding: 0.6rem 0; border-bottom: 1px solid #E2E8F0; font-size: 0.92rem;
-}
-.ebook-toc li:last-child { border-bottom: none; }
-.ebook-toc .toc-check { color: #48BB78; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+/* FINAL CTA */
+#final-cta{padding:5rem 2rem;text-align:center;}
+#final-cta h2{font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:1rem;}
+#final-cta p{font-size:1.05rem;color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 2.5rem;}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.cta-note{font-size:0.82rem;color:rgba(255,255,255,0.6);max-width:560px;margin:1.5rem auto 0;line-height:1.6;}
 
-.excerpt {
-  background: #fff; border-left: 4px solid #667eea;
-  border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem;
-  margin-bottom: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+/* FOOTER */
+.site-footer{background:#0d0d0d;border-top:1px solid rgba(201,168,76,0.25);padding:40px 0;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap;}
+.footer-links a{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;transition:color 0.3s;}
+.footer-links a:hover{color:#c9a84c;}
+.footer-copy{font-size:0.68rem;color:rgba(138,133,128,0.4);font-family:monospace;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  #hero h1{font-size:2rem!important;}
+  #hero{padding:6rem 1.5rem 3rem;}
+  section h2{font-size:2rem!important;}
+  .ebook-grid{grid-template-columns:1fr!important;}
+  .ebook-cover{position:static!important;}
+  .content-grid{grid-template-columns:1fr!important;}
+  .carousel-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .hero-meta{flex-direction:column;text-align:center;}
+  .site-nav{padding:14px 20px;}
+  #navLinks{display:none!important;}
+  .nav-burger{display:flex!important;}
 }
-.excerpt-title { font-size: 0.8rem; font-weight: 700; color: #667eea; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-.excerpt p { font-size: 0.9rem; color: #4A5568; line-height: 1.65; }
-.ebook-cta { margin-top: 1.5rem; }
+@media(min-width:769px){.nav-burger{display:none!important;}}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="site-nav">
-  <a href="/" class="logo">TL<span>;</span>DW <span style="color:#8a8580;font-weight:400;font-size:0.85rem;letter-spacing:3px;">STUDIOS</span></a>
+  <a href="/" class="logo">TL<span>;</span>DW <span style="color:#8a8580;font-weight:400;font-size:0.82rem;letter-spacing:3px;">STUDIOS</span></a>
   <div class="nav-right" id="navLinks">
     <a href="/#how">How It Works</a>
     <a href="/#services">Pricing</a>
-    <a href="/#proof">Case Study</a>
-    <a href="/#faqs">FAQs</a>
     <a href="/resources">Resources</a>
     <a href="/sample" style="color:#c9a84c;">Sample</a>
     <a href="/#contact" class="nav-cta">Get Sample</a>
@@ -243,290 +203,305 @@ section { padding: 4rem 2rem; }
 <div class="mobile-menu" id="mobileMenu">
   <a href="/#how" onclick="closeMenu()">How It Works</a>
   <a href="/#services" onclick="closeMenu()">Pricing</a>
-  <a href="/#proof" onclick="closeMenu()">Case Study</a>
-  <a href="/#faqs" onclick="closeMenu()">FAQs</a>
   <a href="/resources" onclick="closeMenu()">Resources</a>
   <a href="/sample" onclick="closeMenu()">Sample</a>
   <a href="/#contact" class="mob-cta" onclick="closeMenu()">Get Sample</a>
 </div>
 <div class="mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
 
-<!-- SECTION 1: HERO -->
+<!-- ── SECTION 1: HERO ─────────────────────────────────────── -->
 <section id="hero" class="grad">
   <div class="hero-inner">
-    <div class="section-label">Sample Project</div>
-    <h1>Content Transformation<br/>in Action</h1>
-    <p class="hero-sub">See exactly what TL;DW Studios delivers.</p>
-    <p class="hero-sub2">This example shows how we transformed a 60-minute webinar into a complete content ecosystem.</p>
+    <div class="proposed-badge">&#9679; PROPOSED CONCEPT &mdash; PENDING CLIENT BRIEFING</div>
+    <h1>Preview Transformation:<br/>Ipsos Webinar</h1>
+    <p class="hero-sub">See what TL;DW Studios could create from your content.</p>
+    <p class="hero-sub2">This example shows how we would transform your &ldquo;Reputation, Risk &amp; Resilience&rdquo; webinar into a complete content marketing ecosystem.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <div class="meta-label">Client</div>
-        <div class="meta-val">ContentIQ Consulting</div>
+        <div class="meta-label">Source</div>
+        <div class="meta-val">Ipsos &ldquo;Reputation, Risk &amp; Resilience&rdquo; Webinar</div>
       </div>
       <div class="hero-meta-item">
-        <div class="meta-label">Industry</div>
-        <div class="meta-val">B2B Marketing Advisory</div>
+        <div class="meta-label">Speakers</div>
+        <div class="meta-val">Rachel Phillips (Ipsos) &amp; Rod Cartwright</div>
       </div>
       <div class="hero-meta-item">
-        <div class="meta-label">Topic</div>
-        <div class="meta-val">Building 90-Day Content Engines</div>
+        <div class="meta-label">Content</div>
+        <div class="meta-val">56-min webinar synthesizing 11 global reports</div>
       </div>
       <div class="hero-meta-item">
-        <div class="meta-label">Timeline</div>
-        <div class="meta-val">2 business days</div>
+        <div class="meta-label">Proposed Timeline</div>
+        <div class="meta-val">2 business days from briefing to delivery</div>
       </div>
     </div>
+    <p class="hero-disclaimer">This preview demonstrates our extraction and transformation approach. Final deliverables would be refined based on your brand guidelines, key messages, and strategic objectives.</p>
   </div>
 </section>
 
-<!-- CONTENT INVENTORY -->
+<!-- ── CONTENT INVENTORY ────────────────────────────────────── -->
 <section id="inventory">
   <div class="container">
-    <h2>What Was Delivered</h2>
-    <p class="inv-sub">One 60-minute webinar. One month of content.</p>
+    <h2>What We Would Deliver</h2>
+    <p class="inv-sub">One 56-minute webinar. A full month of authority-building content.</p>
     <div class="inv-grid">
       <div class="inv-card">
         <div class="inv-icon">&#128216;</div>
-        <div class="inv-title">Professional eBook</div>
-        <div class="inv-meta">12 pages &bull; 3,200 words</div>
-        <div class="inv-desc">Branded PDF guide ready for lead generation and sales enablement.</div>
+        <div class="inv-title">Strategic eBook</div>
+        <div class="inv-meta">15 pages &bull; 4,200 words</div>
+        <div class="inv-desc">Authority guide positioning Ipsos expertise on crisis preparedness and reputation resilience.</div>
       </div>
       <div class="inv-card">
         <div class="inv-icon">&#128188;</div>
         <div class="inv-title">LinkedIn Lead Post</div>
-        <div class="inv-meta">250 words</div>
-        <div class="inv-desc">Compelling post to promote the eBook and drive downloads.</div>
+        <div class="inv-meta">280 words</div>
+        <div class="inv-desc">Thought leadership post introducing the eBook and driving downloads from your network.</div>
       </div>
       <div class="inv-card">
         <div class="inv-icon">&#128161;</div>
-        <div class="inv-title">5 Thought Leadership Posts</div>
-        <div class="inv-meta">150&ndash;250 words each</div>
-        <div class="inv-desc">Authority-building content tied to key insights from the webinar.</div>
+        <div class="inv-title">6 Insight Posts</div>
+        <div class="inv-meta">180&ndash;250 words each</div>
+        <div class="inv-desc">High-value posts unpacking key frameworks: sensemaking, character vs capability, operationalizing empathy, and more.</div>
       </div>
       <div class="inv-card">
         <div class="inv-icon">&#127912;</div>
         <div class="inv-title">LinkedIn Carousel</div>
-        <div class="inv-meta">8 slides</div>
-        <div class="inv-desc">Visual summary optimized for engagement and shares.</div>
+        <div class="inv-meta">10 slides</div>
+        <div class="inv-desc">Visual breakdown of &ldquo;10 Key Risk Themes&rdquo; synthesized from 837 pages of research across 11 global reports.</div>
       </div>
       <div class="inv-card">
         <div class="inv-icon">&#128221;</div>
         <div class="inv-title">Blog Article</div>
-        <div class="inv-meta">750 words</div>
-        <div class="inv-desc">SEO-optimized article for website and organic traffic.</div>
+        <div class="inv-meta">850 words</div>
+        <div class="inv-desc">SEO-optimized thought leadership article for website traffic and authority building.</div>
       </div>
       <div class="inv-card">
         <div class="inv-icon">&#128236;</div>
         <div class="inv-title">Email Newsletter</div>
-        <div class="inv-meta">350 words</div>
-        <div class="inv-desc">Engaging email to re-activate your audience and drive traffic.</div>
+        <div class="inv-meta">400 words</div>
+        <div class="inv-desc">Executive brief for existing clients and prospects highlighting key insights from the webinar.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 2: EBOOK -->
+<!-- ── SECTION 2: EBOOK ─────────────────────────────────────── -->
 <section id="ebook">
   <div class="container">
     <h2>The eBook</h2>
-    <p class="ebook-sub">A professionally structured guide extracted from the webinar recording.</p>
+    <p class="ebook-sub">A professionally structured authority guide extracted from the webinar content.</p>
     <div class="ebook-grid">
+      <!-- Cover -->
       <div class="ebook-cover grad">
-        <div class="cover-eyebrow">Sample eBook</div>
-        <h3>The 90-Day Content Engine</h3>
-        <div class="cover-subtitle">A Framework for B2B Marketing Teams</div>
+        <div class="cover-eyebrow">Proposed eBook</div>
+        <h3>Rethinking Crisis,<br/>Reimagining Risk</h3>
+        <div class="cover-subtitle">A Strategic Guide to Reputation Resilience in the Age of Permacrisis</div>
         <div class="cover-divider"></div>
-        <div class="cover-author">By Sarah Mitchell &amp; Marcus Chen<br/>ContentIQ Consulting</div>
-        <div class="cover-pages">
-          <div class="cover-stat"><strong>12</strong><span>Pages</span></div>
-          <div class="cover-stat"><strong>3,200</strong><span>Words</span></div>
+        <div class="cover-author">Based on insights from Rachel Phillips (Ipsos)<br/>&amp; Rod Cartwright<br/><span style="color:rgba(255,255,255,0.55);">Ipsos Corporate Reputation</span></div>
+        <div class="cover-stats">
+          <div class="cover-stat"><strong>15</strong><span>Pages</span></div>
           <div class="cover-stat"><strong>12</strong><span>Insights</span></div>
+          <div class="cover-stat"><strong>11</strong><span>Reports</span></div>
         </div>
       </div>
+      <!-- Details -->
       <div class="ebook-details">
         <h4>What&rsquo;s Inside</h4>
         <ul class="ebook-toc">
-          <li><span class="toc-check">&#10003;</span> Introduction: The Content Multiplication Problem</li>
-          <li><span class="toc-check">&#10003;</span> 12 strategic insights on content repurposing</li>
-          <li><span class="toc-check">&#10003;</span> The 90-Day Content Engine Framework</li>
-          <li><span class="toc-check">&#10003;</span> Real quotes from industry experts</li>
-          <li><span class="toc-check">&#10003;</span> Actionable next steps and implementation guide</li>
-          <li><span class="toc-check">&#10003;</span> Resources and tools reference section</li>
+          <li><span class="toc-check">&#10003;</span>Introduction: Why Crisis Preparedness is a Source of Upside Value</li>
+          <li><span class="toc-check">&#10003;</span>12 strategic insights from the webinar</li>
+          <li><span class="toc-check">&#10003;</span>The Sensemaking Framework for Communicators</li>
+          <li><span class="toc-check">&#10003;</span>Character vs Capability: Understanding Crisis Types</li>
+          <li><span class="toc-check">&#10003;</span>Operationalizing Empathy: Turning Care Into Action</li>
+          <li><span class="toc-check">&#10003;</span>From Technical Preparedness to Critical Human Infrastructure</li>
+          <li><span class="toc-check">&#10003;</span>Implementation toolkit and next steps</li>
+          <li><span class="toc-check">&#10003;</span>Case studies and real-world applications</li>
         </ul>
 
         <h4 style="margin-bottom:1rem;">Sample Excerpts</h4>
 
         <div class="excerpt">
-          <div class="excerpt-title">Insight #3: The 10x Content Principle</div>
-          <p>Most B2B teams operate under a fundamental misconception: they believe creating more content is the answer to visibility problems. But the real constraint is not creation. It is extraction and distribution. A single hour of expert conversation contains enough insight to fuel three months of strategic content. The problem is that most organizations treat that hour as a finished product rather than raw material. The 10x Content Principle states that every piece of long-form content should generate at least ten derivative assets, each optimized for different channels, audiences, and objectives.</p>
+          <div class="excerpt-title">Insight #3: Sensemaking is Your Hidden Superpower</div>
+          <p>One of the most undervalued capabilities in corporate communications is what Professor Deborah Ancona at MIT calls &ldquo;sensemaking&rdquo; &mdash; the ability to make sense of a complex environment in order to work on it or work with it more effectively. And here is the provocative truth: there is no business function more adept at sensemaking and sense-giving than the communications function.</p>
+          <p style="margin-top:0.75rem;">While risk teams build heat maps and business continuity plans focus on technical recovery, communicators are uniquely positioned to synthesize complexity, identify patterns across seemingly unrelated events, and translate strategic intent into actionable narrative. In a world of permacrisis and polycrisis, this ability to create clarity from chaos is not just valuable. It is existential.</p>
         </div>
 
         <div class="excerpt">
-          <div class="excerpt-title">Insight #7: Authority Compounds, Not Replaces</div>
-          <p>One of the most common errors in B2B content strategy is treating each piece of content as standalone. But authority does not build linearly. It compounds. When your eBook references concepts from your LinkedIn posts, when your newsletter deepens ideas from your blog, when your webinar builds on frameworks established in your written content, you create what we call &ldquo;content gravity.&rdquo; Each piece pulls harder because previous pieces exist.</p>
+          <div class="excerpt-title">Insight #7: Character Scandals Hit Harder Than Capability Crises</div>
+          <p>Research from Sentient Decision Science analyzing 440 crises across 40 markets over 30 years reveals a striking pattern: the greatest long-term damage to share price comes from what they call &ldquo;white collar crime and mismanagement.&rdquo; In other words, character failures. The relatively lowest impact? Cyber hacks and operational disruptions.</p>
+          <p style="margin-top:0.75rem;">People price in operational capability crises. They do not forgive character-led scandals. And yet most crisis preparedness focuses almost entirely on operational scenarios while treating values and culture as abstract concepts rather than material risk factors.</p>
         </div>
 
-        <div class="ebook-cta">
-          <a href="/#contact" class="btn btn-blue">Download Full Sample eBook &rarr;</a>
+        <div style="margin-top:1.5rem;">
+          <a href="/#contact" class="btn btn-blue">Request Full Transformation Proposal &rarr;</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- SECTION 3: LINKEDIN POSTS -->
-<section id="linkedin" style="background:#fff;">
+
+<!-- ── SECTION 3: LINKEDIN POSTS ────────────────────────────── -->
+<section id="linkedin">
   <div class="container">
-    <h2 style="font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.5rem;">LinkedIn Posts</h2>
-    <p style="text-align:center;color:#718096;margin-bottom:3rem;">Engagement-ready posts for the host and speakers &mdash; published over 4&ndash;6 weeks.</p>
+    <h2>LinkedIn Posts</h2>
+    <p class="li-sub">Engagement-ready posts for Rachel Phillips, Rod Cartwright, and the Ipsos page &mdash; published over 4&ndash;6 weeks.</p>
 
-    <!-- Post 1 -->
-    <div style="max-width:600px;margin:0 auto 2rem;">
-      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
-        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#EBF8FF;color:#2B6CB0;padding:4px 12px;border-radius:20px;">Lead Magnet Post</span>
-      </div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem;flex-shrink:0;">SM</div>
+    <!-- Post 1: Lead Magnet -->
+    <div class="li-post-wrap">
+      <div><span class="li-badge li-badge-blue">Lead Magnet Post</span></div>
+      <div class="li-card">
+        <div class="li-author-row">
+          <div class="li-avatar li-av-purple">RP</div>
           <div>
-            <div style="font-weight:700;font-size:0.92rem;">Sarah Mitchell</div>
-            <div style="font-size:0.78rem;color:#718096;">CEO at ContentIQ Consulting &bull; 2d &bull; Edited</div>
+            <div class="li-author-name">Rachel Phillips</div>
+            <div class="li-author-meta">Director, Corporate Reputation at Ipsos &bull; 2d</div>
           </div>
         </div>
-        <div style="font-size:0.92rem;color:#2D3748;line-height:1.7;">
-          <p style="margin-bottom:0.75rem;">Your team just delivered a great webinar.</p>
-          <p style="margin-bottom:0.75rem;">Strong insights. Smart questions. Real expertise on display.</p>
-          <p style="margin-bottom:0.75rem;">Then it ended. And 48 hours later, almost no one is talking about it.</p>
-          <p style="margin-bottom:0.75rem;">That is the gap most B2B teams do not address.</p>
-          <p style="margin-bottom:0.75rem;">The webinar was not the finish line. It was the starting material.</p>
-          <p style="margin-bottom:0.75rem;">Here is what actually happens to most webinar recordings: They get posted to a YouTube channel with 14 subscribers. They get linked in one follow up email that 11% of people open. They get mentioned in Slack once, then buried under 600 other messages.</p>
-          <p style="margin-bottom:0.75rem;">And that is it. Thousands of dollars in production cost. Weeks of coordination. An hour of genuine expertise. All of it generates value for exactly 90 minutes.</p>
-          <p style="margin-bottom:0.75rem;">The teams that win do something different. They treat long-form content as raw material, not finished product. One webinar becomes an eBook. That eBook becomes 15 LinkedIn posts. Those posts become a blog series. That blog series feeds a quarterly newsletter.</p>
-          <p style="margin-bottom:0.75rem;">Same work. 10x the impact.</p>
-          <p style="margin-bottom:0.75rem;">We just published a new framework on exactly how to do this. It is called The 90-Day Content Engine, and it walks through the system we have used with 40+ B2B marketing teams.</p>
-          <p>Download the full guide here &rarr;</p>
+        <div class="li-body">
+          <p>Last week, we hosted a webinar on reputation, risk, and resilience.</p>
+          <p>56 minutes. Two experts. Insights synthesized from 11 global reports covering everything from geopolitics to mental health to cyber insecurity.</p>
+          <p>And here&rsquo;s what struck me most from the conversation with Rod Cartwright:</p>
+          <p>Most organizations treat crisis preparedness like buying insurance. Something you hope you never need. A cost center. A defensive play.</p>
+          <p>But Rod made a provocative argument that I think every CCO and communications leader needs to hear:</p>
+          <p>Crisis preparedness is not just about managing downside risk. It is a source of material upside value.</p>
+          <p>Think about it this way. If I offered you an insurance policy that not only paid out when disaster struck, but also identified cracks in your walls and flaws in your foundations and repaired them ahead of time, you would take it immediately.</p>
+          <p>That is what effective crisis preparedness actually does.</p>
+          <p>It reveals organizational vulnerabilities before they become existential. It stress tests your values and culture. It builds the critical human infrastructure that determines whether your organization thrives or merely survives when the pressure hits.</p>
+          <p>And the pressure will hit. We are living in what Collins Dictionary called a &ldquo;permacrisis.&rdquo; The World Economic Forum describes it as a polycrisis. The risks are not just numerous. They are intersectional. They compound. They accelerate.</p>
+          <p>So here is the question: Is your organization treating crisis preparedness as a bolt-on compliance exercise, or as a strategic capability that creates competitive advantage?</p>
+          <p>We have just published a strategic guide based on the webinar insights. It is called &ldquo;Rethinking Crisis, Reimagining Risk&rdquo; and it walks through the frameworks that leading organizations are using to build genuine resilience.</p>
+          <p>Download it here &rarr;</p>
         </div>
-        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #E2E8F0;display:flex;gap:1.5rem;">
-          <span style="font-size:0.8rem;color:#718096;">&#128077; 124 reactions</span>
-          <span style="font-size:0.8rem;color:#718096;">&#128172; 18 comments</span>
+        <div class="li-stats">
+          <span>&#128077; 287 reactions</span>
+          <span>&#128172; 34 comments</span>
         </div>
       </div>
     </div>
 
-    <!-- Post 2 -->
-    <div style="max-width:600px;margin:0 auto 2rem;">
-      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
-        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#F0FFF4;color:#276749;padding:4px 12px;border-radius:20px;">Thought Leadership Post #1</span>
-      </div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#48BB78,#38A169);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem;flex-shrink:0;">MC</div>
+    <!-- Post 2: Sensemaking -->
+    <div class="li-post-wrap">
+      <div><span class="li-badge li-badge-green">Thought Leadership Post #1</span></div>
+      <div class="li-card">
+        <div class="li-author-row">
+          <div class="li-avatar li-av-green">RC</div>
           <div>
-            <div style="font-weight:700;font-size:0.92rem;">Marcus Chen</div>
-            <div style="font-size:0.78rem;color:#718096;">Head of Content Strategy at ContentIQ &bull; 5d</div>
+            <div class="li-author-name">Rod Cartwright</div>
+            <div class="li-author-meta">Crisis &amp; Reputation Expert &bull; 4d</div>
           </div>
         </div>
-        <div style="font-size:0.92rem;color:#2D3748;line-height:1.7;">
-          <p style="margin-bottom:0.75rem;">Most B2B content strategies fail because they optimize for the wrong metric.</p>
-          <p style="margin-bottom:0.75rem;">Volume is easy to measure. Posts per week. Articles per month. Webinars per quarter.</p>
-          <p style="margin-bottom:0.75rem;">But volume is not the constraint. Extraction is.</p>
-          <p style="margin-bottom:0.75rem;">I see marketing teams running four webinars a month while their best content from Q1 sits unused in a Google Drive folder. They are creating more instead of using what they already have.</p>
-          <p style="margin-bottom:0.75rem;">The shift that changes everything is treating finished content as raw material.</p>
-          <p style="margin-bottom:0.75rem;">A 60-minute webinar is not one asset. It is 15 assets waiting to be extracted: An eBook that positions your expertise. LinkedIn posts that drive daily engagement. A blog article that ranks for SEO. An email series that re-engages your list. Quote graphics that extend reach. A carousel that gets shared.</p>
-          <p style="margin-bottom:0.75rem;">Same webinar. Zero additional expert time. Completely different impact.</p>
-          <p>If your content strategy is built on &ldquo;create more,&rdquo; you will always be underwater. If it is built on &ldquo;extract better,&rdquo; you will compound faster than your competition can create.</p>
+        <div class="li-body">
+          <p>I have spent 30 years in the crisis communications space.</p>
+          <p>And I am increasingly convinced that we have been underselling our most valuable capability.</p>
+          <p>Not message development. Not media training. Not reputation monitoring.</p>
+          <p>Sensemaking.</p>
+          <p>The ability to take a complex, uncertain, rapidly evolving situation and create clarity. To synthesize signal from noise. To identify patterns across seemingly unrelated events. To translate confusion into actionable understanding.</p>
+          <p>This is what communicators do better than any other function in the organization.</p>
+          <p>Risk teams build heat maps. Business continuity plans focus on technical recovery. Legal teams assess liability. Operations teams fix what broke.</p>
+          <p>But when the storm hits, who makes sense of what it all means? Who translates that understanding into narrative? Who connects internal confusion to external stakeholder needs?</p>
+          <p>The communications function.</p>
+          <p>And yet most organizations position communicators as storytellers, not sensemakers. As messengers, not strategic advisors. As the team that polishes the message after the decisions have been made.</p>
+          <p>That is a fundamental misunderstanding of the role.</p>
+          <p>In a world of permacrisis and polycrisis, sensemaking is not a nice-to-have communication skill. It is a core strategic capability.</p>
+          <p>So here is my challenge to every CCO and communications leader: Stop positioning yourself as the storyteller-in-chief. Start positioning yourself as the sensemaker-in-chief.</p>
         </div>
-        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #E2E8F0;display:flex;gap:1.5rem;">
-          <span style="font-size:0.8rem;color:#718096;">&#128077; 89 reactions</span>
-          <span style="font-size:0.8rem;color:#718096;">&#128172; 12 comments</span>
+        <div class="li-stats">
+          <span>&#128077; 412 reactions</span>
+          <span>&#128172; 67 comments</span>
         </div>
       </div>
     </div>
 
-    <!-- Post 3 -->
-    <div style="max-width:600px;margin:0 auto 2rem;">
-      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
-        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#FAF5FF;color:#6B46C1;padding:4px 12px;border-radius:20px;">Thought Leadership Post #2</span>
-      </div>
-      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
-          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem;flex-shrink:0;">SM</div>
+    <!-- Post 3: Character vs Capability -->
+    <div class="li-post-wrap">
+      <div><span class="li-badge li-badge-purple">Thought Leadership Post #2</span></div>
+      <div class="li-card">
+        <div class="li-author-row">
+          <div class="li-avatar li-av-purple">RP</div>
           <div>
-            <div style="font-weight:700;font-size:0.92rem;">Sarah Mitchell</div>
-            <div style="font-size:0.78rem;color:#718096;">CEO at ContentIQ Consulting &bull; 1w</div>
+            <div class="li-author-name">Rachel Phillips</div>
+            <div class="li-author-meta">Director, Corporate Reputation at Ipsos &bull; 1w</div>
           </div>
         </div>
-        <div style="font-size:0.92rem;color:#2D3748;line-height:1.7;">
-          <p style="margin-bottom:0.75rem;">Your best content is probably sitting in a folder no one opens.</p>
-          <p style="margin-bottom:0.75rem;">I talked to a VP of Marketing last week. Her team runs monthly webinars. Great speakers. Strong attendance. Real value delivered.</p>
-          <p style="margin-bottom:0.75rem;">I asked how they use the recordings. She said they post them to their resource center. Maybe share the link once on LinkedIn.</p>
-          <p style="margin-bottom:0.75rem;">Twelve webinars from last year. Twelve hours of expert thinking. Maybe 200 total views across all of them combined.</p>
-          <p style="margin-bottom:0.75rem;">This is not a her problem. This is an industry problem.</p>
-          <p style="margin-bottom:0.75rem;">Most B2B companies have a content graveyard. Recorded webinars. Conference presentations. Podcast interviews. All of it valuable. Almost none of it working.</p>
-          <p style="margin-bottom:0.75rem;">The companies that are winning have figured out something simple: finished content is just the starting point.</p>
-          <p style="margin-bottom:0.75rem;">They are not asking &ldquo;How do we get more people to watch the replay?&rdquo; They are asking &ldquo;What can we build from the insights in this recording?&rdquo;</p>
-          <p>If you have a content graveyard, you do not have a content problem. You have an extraction problem.</p>
+        <div class="li-body">
+          <p>If I were made prime minister (and luckily for all of you that will never happen), I would ban the term &ldquo;PR crisis.&rdquo;</p>
+          <p>Here is why.</p>
+          <p>Most of what organizations call a PR crisis is not a communications problem at all. It is either an operational failure (capability) or a values failure (character).</p>
+          <p>And the distinction matters more than most people realize.</p>
+          <p>Capability crises are about technical competence. A factory explodes. A supply chain fails. A product is recalled. These are operational breakdowns that can be fixed with better systems and processes.</p>
+          <p>Character crises are about values, ethics, culture, and behavior. A CEO lies. A company covers up safety violations. These are moral failures that reveal something fundamental about who you are.</p>
+          <p>And here is the uncomfortable truth: character scandals do far more long-term damage than capability crises.</p>
+          <p>Research analyzing 440 crises over 30 years found that the greatest share price impact came from white collar crime and mismanagement. The lowest impact? Cyber hacks.</p>
+          <p>People price in operational failures. They do not forgive character scandals.</p>
+          <p>And yet when I work with organizations on crisis preparedness, 90% of the scenarios they want to war-game are operational. Almost no one wants to scenario-plan around a senior executive behaving unethically.</p>
+          <p>Why? Because those conversations are uncomfortable.</p>
+          <p>But ignoring character risks does not make them go away. It just means you are unprepared when they materialize.</p>
+          <p>That is where the real reputational risk lives.</p>
         </div>
-        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #E2E8F0;display:flex;gap:1.5rem;">
-          <span style="font-size:0.8rem;color:#718096;">&#128077; 156 reactions</span>
-          <span style="font-size:0.8rem;color:#718096;">&#128172; 24 comments</span>
+        <div class="li-stats">
+          <span>&#128077; 523 reactions</span>
+          <span>&#128172; 89 comments</span>
         </div>
       </div>
     </div>
 
-    <div style="text-align:center;color:#718096;font-size:0.9rem;font-style:italic;">+ 3 additional thought leadership posts included in full package</div>
+    <p class="li-more-note">+ 4 additional insight posts included in full package &mdash; covering operationalizing empathy, strategic silence, relationships vs reputation, and permacrisis as structural reality</p>
   </div>
 </section>
 
-<!-- SECTION 4: BLOG + NEWSLETTER -->
-<section id="content" style="background:#F7FAFC;padding:4rem 2rem;">
+<!-- ── SECTION 4: BLOG + NEWSLETTER ─────────────────────────── -->
+<section id="content">
   <div class="container">
-    <h2 style="font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.5rem;">Blog &amp; Newsletter</h2>
-    <p style="text-align:center;color:#718096;margin-bottom:3rem;">Long-form and email content to extend reach across every channel.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:1100px;margin:0 auto;" class="blog-newsletter-grid">
+    <h2>Blog &amp; Newsletter</h2>
+    <p class="content-sub">Long-form and email content to extend reach and build search authority.</p>
+    <div class="content-grid">
 
       <!-- Blog -->
       <div>
-        <div class="section-label dark" style="margin-bottom:1.5rem;">Blog Article</div>
-        <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-          <div class="grad" style="padding:2rem;">
-            <h3 style="color:#fff;font-size:1.4rem;font-weight:800;line-height:1.3;margin-bottom:0.5rem;">Why Your Best Webinar Content Dies After 60 Minutes</h3>
-            <p style="color:rgba(255,255,255,0.75);font-size:0.85rem;">By Sarah Mitchell &bull; 8 min read</p>
+        <div class="section-label-pill">Blog Article</div>
+        <div class="preview-card">
+          <div class="preview-card-header grad">
+            <h3 style="color:#fff;font-size:1.35rem;font-weight:800;line-height:1.3;margin-bottom:0.5rem;">Why Most Organizations Are Preparing for the Wrong Kind of Crisis</h3>
+            <p style="color:rgba(255,255,255,0.72);font-size:0.82rem;">By Rachel Phillips &amp; Rod Cartwright &bull; 9 min read</p>
           </div>
-          <div style="padding:1.75rem;">
-            <p style="font-size:0.92rem;color:#4A5568;line-height:1.7;margin-bottom:1rem;">Every quarter, B2B marketing teams invest thousands of dollars and dozens of hours into producing webinars. They coordinate with subject matter experts, build slide decks, promote the event, manage registrations, and deliver an hour of genuine expertise to their audience.</p>
-            <p style="font-size:0.92rem;color:#4A5568;line-height:1.7;margin-bottom:1rem;">Then the webinar ends. The recording gets posted somewhere. Maybe it gets mentioned in a follow-up email. And then it quietly fades into the content graveyard.</p>
-            <h4 style="font-size:1rem;font-weight:700;margin:1.25rem 0 0.5rem;color:#2D3748;">The Real Cost of One-and-Done Content</h4>
-            <p style="font-size:0.92rem;color:#4A5568;line-height:1.7;margin-bottom:1rem;">Consider what goes into producing a single high-quality webinar. The subject matter expert spends 3&ndash;5 hours preparing. The marketing team spends 10&ndash;15 hours on promotion, logistics, and production. The content might generate 200&ndash;500 live attendees, but after the event, engagement drops to nearly zero.</p>
-            <h4 style="font-size:1rem;font-weight:700;margin:1.25rem 0 0.5rem;color:#2D3748;">The Content Multiplication Framework</h4>
-            <p style="font-size:0.92rem;color:#4A5568;line-height:1.7;margin-bottom:1.5rem;">The companies that are getting this right have shifted their thinking entirely. They do not ask &ldquo;How do we get more people to watch the replay?&rdquo; Instead, they ask &ldquo;What can we build from the insights in this recording?&rdquo;</p>
-            <a href="/#contact" class="btn btn-blue btn-sm">Download the Framework &rarr;</a>
+          <div class="preview-card-body">
+            <p>Every year, organizations across the globe invest millions in crisis preparedness. They build crisis communications plans. They create risk heat maps. They establish business continuity protocols.</p>
+            <p>And yet when the crisis hits, many still fail spectacularly. Why? Because most crisis preparedness programs are built on a fundamental misunderstanding of what a crisis actually is.</p>
+            <h4>The Etymology of Crisis</h4>
+            <p>The word &ldquo;crisis&rdquo; comes from the Greek meaning &ldquo;a moment where a choice, a decision, or a judgment has to be made.&rdquo; It describes a turning point, not an endpoint. And yet most people approach crisis as disaster, catastrophe, panic.</p>
+            <h4>The Empirical Evidence</h4>
+            <p>Research from Oxford Metrica analyzing 200 mass fatality events found that companies who responded badly saw share price fall by an average of 15% over six months. But companies that responded well saw a net uptick of 5% over the same period.</p>
+            <h4>The Real Risk: Character, Not Capability</h4>
+            <p>Analysis of 440 crises across 40 markets over 30 years reveals that the greatest long-term damage comes from character failures &mdash; white collar crime and mismanagement. The lowest impact? Cyber hacks. Yet 90% of crisis scenario planning focuses on operational risk.</p>
+            <div style="margin-top:1.5rem;">
+              <a href="/#contact" class="btn btn-blue btn-sm">Download the Full Strategic Guide &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Newsletter -->
       <div>
-        <div class="section-label dark" style="margin-bottom:1.5rem;">Email Newsletter</div>
-        <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-          <div style="background:#E2E8F0;padding:1rem 1.5rem;font-size:0.82rem;color:#4A5568;">
-            <div><strong>From:</strong> Sarah Mitchell &lt;sarah@contentiq.com&gt;</div>
-            <div><strong>Subject:</strong> The content you&rsquo;re already creating (but not using)</div>
+        <div class="section-label-pill">Email Newsletter</div>
+        <div class="preview-card">
+          <div class="email-header-bar">
+            <div><strong>From:</strong> Rachel Phillips &lt;rachel.phillips@ipsos.com&gt;</div>
+            <div><strong>Subject:</strong> The crisis preparedness blind spot most organizations miss</div>
           </div>
-          <div style="padding:1.75rem;">
-            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">Hi [Name],</p>
-            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">Quick question: How many hours did your team spend on webinars last quarter?</p>
-            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">Now, how many of those recordings are still generating value today?</p>
-            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">If you are like most B2B marketing teams, the answer is zero. The webinar happened. It was good. Then it disappeared into a Google Drive folder no one opens.</p>
-            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">Every webinar your team produces contains enough strategic insight to fuel three months of content marketing. The problem is that most organizations treat that webinar as a finished product rather than raw material.</p>
-            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1rem;">The teams that win do not create more content. They extract better. They treat every hour of expert conversation as the foundation for an eBook, 15 LinkedIn posts, a blog series, an email sequence, and a library of sales enablement materials.</p>
-            <p style="font-size:0.92rem;color:#2D3748;line-height:1.7;margin-bottom:1.5rem;">Same work. 10x the impact.</p>
+          <div class="preview-card-body">
+            <p>Hi [Name],</p>
+            <p>Last week we hosted a webinar on reputation, risk, and resilience with crisis expert Rod Cartwright.</p>
+            <p>One statistic from the session stopped everyone in their tracks:</p>
+            <p>Organizations spend millions on crisis preparedness. And yet research shows 90% of the scenarios they prepared for are operational. Almost no one prepares for the crisis that does the most long-term damage: character failures.</p>
+            <p>Analysis of 440 crises over 30 years found the greatest share price impact came from white collar crime and mismanagement. The lowest impact? Cyber hacks.</p>
+            <p>Rod made it plain: &ldquo;I would ban the term PR crisis, because most of what organizations call a PR crisis is actually either an operational failure or a values failure. And the distinction matters.&rdquo;</p>
+            <p>We have synthesized the key insights into a strategic guide: &ldquo;Rethinking Crisis, Reimagining Risk.&rdquo; It covers why sensemaking is your hidden strategic capability, the difference between character and capability crises, and how to build genuine resilience.</p>
             <div style="margin:1.5rem 0;">
-              <a href="/#contact" class="btn btn-blue btn-sm">Read the Full Framework &rarr;</a>
+              <a href="/#contact" class="btn btn-blue btn-sm">Download the Strategic Guide &rarr;</a>
             </div>
-            <p style="font-size:0.92rem;color:#2D3748;margin-top:1rem;">Let me know what you think.<br/><br/>Sarah</p>
+            <p style="font-size:0.88rem;color:#2D3748;">Best regards,<br/>Rachel Phillips<br/>Director, Corporate Reputation<br/>Ipsos</p>
           </div>
-          <div style="background:#E2E8F0;padding:1rem 1.5rem;text-align:center;font-size:0.78rem;color:#718096;">
-            ContentIQ Consulting &bull; Helping B2B Teams Build Authority Through Content<br/>
+          <div class="email-footer-bar">
+            Ipsos Corporate Reputation &bull; Supporting Resilient Reputations for 40+ Years<br/>
             <a href="#" style="color:#718096;">Unsubscribe</a> &bull; <a href="#" style="color:#718096;">Update Preferences</a>
           </div>
         </div>
@@ -536,102 +511,70 @@ section { padding: 4rem 2rem; }
   </div>
 </section>
 
-<!-- SECTION 5: CAROUSEL + CTA -->
-<section id="carousel" style="background:#F7FAFC;padding:4rem 2rem;border-top:1px solid #E2E8F0;">
+<!-- ── SECTION 5: CAROUSEL ──────────────────────────────────── -->
+<section id="carousel">
   <div class="container">
-    <h2 style="font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:0.5rem;">LinkedIn Carousel</h2>
-    <p style="text-align:center;color:#718096;margin-bottom:3rem;">8-slide visual summary optimized for engagement and shares.</p>
-    <div class="carousel-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1000px;margin:0 auto;">
-      <div class="cs"><div class="cs-num">Slide 1</div><div><div class="cs-title">Your webinar isn&rsquo;t dead.</div><div class="cs-text">You&rsquo;re just not using it right.</div></div></div>
-      <div class="cs"><div class="cs-num">Slide 2</div><div><div class="cs-title">The Problem</div><div class="cs-text">Most teams spend weeks creating a webinar, then post it once and move on.</div></div></div>
-      <div class="cs"><div class="cs-num">Slide 3</div><div><div class="cs-title">The Reality</div><div class="cs-text">One hour of expert content contains enough insight to fuel 90 days of marketing.</div></div></div>
-      <div class="cs"><div class="cs-num">Slide 4</div><div><div class="cs-title">Step 1: Extract</div><div class="cs-text">Identify 10&ndash;15 key insights from the recording.</div></div></div>
-      <div class="cs"><div class="cs-num">Slide 5</div><div><div class="cs-title">Step 2: Structure</div><div class="cs-text">Turn those insights into an eBook that serves as your anchor asset.</div></div></div>
-      <div class="cs"><div class="cs-num">Slide 6</div><div><div class="cs-title">Step 3: Distribute</div><div class="cs-text">Break insights into LinkedIn posts, blog articles, and email content.</div></div></div>
-      <div class="cs"><div class="cs-num">Slide 7</div><div><div class="cs-title">The Result</div><div class="cs-text">Same expert time. 10x the reach. Content that compounds instead of disappears.</div></div></div>
-      <div class="cs cs-green"><div class="cs-num">Slide 8</div><div><div class="cs-title">Want the full framework?</div><div class="cs-text">Download our 90-Day Content Engine guide.</div></div></div>
+    <h2>LinkedIn Carousel</h2>
+    <p class="car-sub">10-slide visual breakdown of key risk themes &mdash; synthesized from 837 pages across 11 global reports.</p>
+    <div class="carousel-grid">
+      <div class="cs"><div class="cs-num">1/10</div><div><div class="cs-title">Intersectional Risk</div><div class="cs-text">Risks no longer exist in isolation. They compound, accelerate, and mutually reinforce.</div></div></div>
+      <div class="cs"><div class="cs-num">2/10</div><div><div class="cs-title">Geopolitics</div><div class="cs-text">From global to deeply personal. Uncertainty is now embedded in individual decision-making.</div></div></div>
+      <div class="cs"><div class="cs-num">3/10</div><div><div class="cs-title">Climate Emergency</div><div class="cs-text">Top 5 risks over 10 years are climate-related, yet pushed down by more urgent short-term crises.</div></div></div>
+      <div class="cs"><div class="cs-num">4/10</div><div><div class="cs-title">Mental Health Pandemic</div><div class="cs-text">Post-COVID mental health crisis is now the #1 business disruptor globally.</div></div></div>
+      <div class="cs"><div class="cs-num">5/10</div><div><div class="cs-title">Falling Engagement</div><div class="cs-text">Global employee engagement dropped for the first time in 9 years &mdash; to just 21%.</div></div></div>
+      <div class="cs"><div class="cs-num">6/10</div><div><div class="cs-title">The Terrible Triad</div><div class="cs-text">Polarization, misinformation, and authoritarianism feed each other in a compounding cycle.</div></div></div>
+      <div class="cs"><div class="cs-num">7/10</div><div><div class="cs-title">Cyber Insecurity</div><div class="cs-text">Financial fraud and cybercrime remain top business disruptors &mdash; yet cause less reputational harm than character failures.</div></div></div>
+      <div class="cs"><div class="cs-num">8/10</div><div><div class="cs-title">Inequality &amp; Injustice</div><div class="cs-text">Growing disparities in income and opportunity fuel societal tension and stakeholder pressure.</div></div></div>
+      <div class="cs"><div class="cs-num">9/10</div><div><div class="cs-title">Generational Tensions</div><div class="cs-text">Super-aging populations create conflict between urban and rural, young and old.</div></div></div>
+      <div class="cs cs-last"><div class="cs-num">10/10</div><div><div class="cs-title">The Pressure Cooker</div><div class="cs-text">Risks are stable but intensifying. The heat is rising. Is your organization ready?</div></div></div>
     </div>
   </div>
 </section>
 
-<style>
-.cs {
-  aspect-ratio: 1;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 8px; padding: 1.25rem;
-  display: flex; flex-direction: column;
-  justify-content: space-between; color: #fff;
-}
-.cs-green { background: linear-gradient(135deg, #48BB78, #38A169); }
-.cs-num { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
-.cs-title { font-size: 1.05rem; font-weight: 800; line-height: 1.25; margin-bottom: 0.4rem; }
-.cs-text { font-size: 0.78rem; color: rgba(255,255,255,0.8); line-height: 1.45; }
-</style>
-
-<!-- FINAL CTA -->
-<section id="final-cta" class="grad" style="padding:5rem 2rem;text-align:center;">
-  <div style="max-width:800px;margin:0 auto;">
-    <h2 style="font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:1rem;">Want This for Your Content?</h2>
-    <p style="font-size:1.1rem;color:rgba(255,255,255,0.85);margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;">Transform your webinars, podcasts, and presentations into authority-building content that works for months.</p>
-    <div class="cta-btns" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+<!-- ── FINAL CTA ─────────────────────────────────────────────── -->
+<section id="final-cta" class="grad">
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
+    <h2>Ready to Transform Your Content?</h2>
+    <p>This preview shows what we could create from your webinars, podcasts, and presentations. Turn expert conversations into strategic marketing assets that build authority for months.</p>
+    <div class="cta-btns">
       <a href="/#services" class="btn btn-white">See Pricing</a>
-      <a href="/#contact" class="btn btn-outline">Request Custom Sample</a>
+      <a href="/#contact" class="btn btn-outline">Request Custom Preview</a>
     </div>
+    <p class="cta-note">Interested in seeing this approach applied to YOUR content? We can create a custom preview based on any webinar, podcast episode, or presentation recording you provide.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:#0d0d0d;border-top:1px solid rgba(201,168,76,0.25);padding:40px 0;">
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer class="site-footer">
   <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div class="footer-inner">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" height="40" aria-label="TL;DW Studios">
-        <text x="4" y="52" font-family="'Arial Black','Impact',sans-serif" font-weight="900" font-size="56" fill="rgba(245,242,236,0.35)" letter-spacing="-1">TL;DW</text>
-        <text x="6" y="72" font-family="'Arial',sans-serif" font-weight="400" font-size="14" fill="rgba(201,168,76,0.35)" letter-spacing="8">STUDIOS</text>
+        <text x="4" y="52" font-family="'Arial Black',Impact,sans-serif" font-weight="900" font-size="56" fill="rgba(245,242,236,0.35)" letter-spacing="-1">TL;DW</text>
+        <text x="6" y="72" font-family="Arial,sans-serif" font-weight="400" font-size="14" fill="rgba(201,168,76,0.35)" letter-spacing="8">STUDIOS</text>
       </svg>
-      <div style="display:flex;gap:28px;flex-wrap:wrap;">
-        <a href="/#how" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">How It Works</a>
-        <a href="/#services" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">Pricing</a>
-        <a href="/#proof" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">Case Study</a>
-        <a href="/#faqs" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">FAQs</a>
-        <a href="/resources" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">Resources</a>
-        <a href="mailto:hello@tldwstudios.com" style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a8580;">Contact</a>
+      <div class="footer-links">
+        <a href="/#how">How It Works</a>
+        <a href="/#services">Pricing</a>
+        <a href="/#proof">Case Study</a>
+        <a href="/#faqs">FAQs</a>
+        <a href="/resources">Resources</a>
+        <a href="mailto:hello@tldwstudios.com">Contact</a>
       </div>
-      <div style="font-size:0.68rem;color:rgba(138,133,128,0.4);font-family:monospace;">&copy; 2025 TL;DW Studios. All rights reserved.</div>
+      <div class="footer-copy">&copy; 2025 TL;DW Studios. All rights reserved.</div>
     </div>
   </div>
 </footer>
 
-<style>
-.blog-newsletter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-@media (max-width: 768px) {
-  #hero h1 { font-size: 2rem !important; }
-  section h2 { font-size: 2rem !important; }
-  .ebook-grid { grid-template-columns: 1fr !important; }
-  .ebook-cover { position: static !important; }
-  .blog-newsletter-grid { grid-template-columns: 1fr !important; }
-  .carousel-grid { grid-template-columns: repeat(2,1fr) !important; }
-  .cta-btns { flex-direction: column; align-items: center; }
-  .hero-meta { flex-direction: column; text-align: center; }
-  .site-nav { padding: 14px 20px; }
-  #navLinks { display: none !important; }
-  .nav-burger { display: flex !important; }
-}
-@media (min-width: 769px) {
-  .nav-burger { display: none !important; }
-}
-footer a:hover { color: #c9a84c !important; }
-</style>
-
 <script>
-function toggleMenu() {
-  var m = document.getElementById('mobileMenu');
-  var o = document.getElementById('mobileOverlay');
-  var b = document.getElementById('navBurger');
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  var o=document.getElementById('mobileOverlay');
+  var b=document.getElementById('navBurger');
   m.classList.toggle('open');
   o.classList.toggle('open');
   b.classList.toggle('open');
 }
-function closeMenu() {
+function closeMenu(){
   document.getElementById('mobileMenu').classList.remove('open');
   document.getElementById('mobileOverlay').classList.remove('open');
   document.getElementById('navBurger').classList.remove('open');
